@@ -1,0 +1,17 @@
+/*************home page and sign in--> logo css****************/
+
+.navigation{
+	background-color: #090162;
+}
+.navbar-logo{
+    margin-left: 4px;
+    cursor: pointer;
+    width: 60px;
+    margin-top: 0rem;
+}
+.nav-link{
+	font-family: Poppins;
+	margin: 10px;
+	font-size: 18px;
+}
+
