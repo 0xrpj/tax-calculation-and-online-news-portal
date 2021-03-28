@@ -1,0 +1,189 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.navigation{
+	background-color: #090162;
+}
+.navbar-logo{
+    margin-left: 4px;
+    cursor: pointer;
+    width: 60px;
+    margin-top: 0rem;
+}
+
+body{
+	font-family: 'Poppins';
+}
+
+.personalizationImg{
+	width: 550px;
+}
+
+.avatar{
+	width: 100px;
+}
+
+.login-container{
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+form{
+	width: 360px;
+}
+
+form h2{
+	font-family: 'Poppins';
+	text-transform: uppercase;
+	margin:15px 0;
+	color: #333;
+}
+
+.input-div{
+	position: relative;
+	display: grid;
+	grid-template-columns: 7% 93%; 
+	margin: 25px 0;
+	padding: 5px 0;
+	border-bottom: 2px solid #d9d9d9;
+}
+
+.input-div:after, .input-div:before{
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	width: 50%;
+	height: 2px;
+	background-color: #38d39f;
+	transition: .3s;
+}
+
+.input-div:after{
+	right: 50%;
+}
+
+.input-div:before{
+	left: 50%;
+}
+
+.input-div.focus .i i{
+	color: #9932CC;
+}
+
+.input-div.focus div h5{
+	top: -5px;
+	font-size: 15px;
+}
+
+.input-div.focus:after, .input-div.focus:before{
+	width: 50%
+}
+		
+.input-div.one{
+	margin-top: 0;
+}
+
+.input-div.two{
+	margin-bottom: 4px;
+}
+
+.input-div.three{
+	margin-bottom: 4px;
+}
+
+.input-div.four{
+	margin-bottom: 4px;
+}
+
+.i{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.i i{
+	color: #d9d9d9;
+	transition: .3s;
+}
+
+.input-div div{
+	position: relative;
+	height: 45px;
+	transition:.3s;
+}
+
+.input-div div h5{
+	position: absolute ;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #999;
+	font-size: 18px;
+	transition: .3s;
+}
+
+input{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border:none;
+	outline: none;
+	background:none;
+	padding: 0.5rem 0.7rem;
+	font-size: 1.2rem;
+	font-family: 'Poppins';
+	color: #555;
+}
+
+.button{
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	margin: 1rem 0;
+	font-size: 1.2rem;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background-image: linear-gradient(to right, #00FFFF, #00008B,#00FFFF);
+	background-size: 200%;
+	font-family: 'Poppins';
+	transition: .5s;
+	text-transform: uppercase;
+	color: white;
+}
+
+.button:hover{
+	background-position: right;
+}
+
+@media screen and (max-width: 1000px){
+	form{
+		width: 290px;
+	}
+
+	form h2{
+		font-size: 2.4rem;
+		margin: 8px 0;
+
+	}
+
+	.personalizationImg img{
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 900px){
+	.personalizationImg{
+		display: none;
+	}
+
+	.login-container{
+		justify-content: center;
+	}
+}
