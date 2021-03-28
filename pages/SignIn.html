@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tax Management System</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="
+	../css/style.css"
+    />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .log-header {
+        margin-top: 10px;
+        margin-left: 20px;
+        line-height: 60px;
+        text-align: center;
+      }
+
+      .log-header h2 {
+        font-size: 26px;
+        font-family: "Poppins";
+      }
+      .log-header h3 {
+        font-size: 18px;
+        font-family: "Poppins";
+      }
+
+      body {
+        background-color: rgb(219, 226, 226);
+        /*background: linear-gradient(-45deg,  #EE7752, #E73C7E, #23A605, #23D5AB );;*/
+      }
+
+      .row {
+        background-color: white;
+        border-radius: 30px;
+        box-shadow: 15px 15px 22px grey;
+      }
+
+      .img-fluid {
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+      .header6 {
+        font-size: 20px;
+        font-weight: normal;
+        font-family: "Poppins";
+      }
+      .btn1 {
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 100%;
+        background-color: #090162;
+        color: white;
+        border-radius: 4px;
+        font-weight: bold;
+        box-shadow: 5px 5px 5px grey;
+      }
+      .btn1:hover {
+        background-color: white;
+        border: 1px solid;
+        color: #090162;
+        box-shadow: none;
+      }
+      .form-control {
+        box-shadow: 3px 3px 5px grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <nav class="navbar navbar-expand-md navbar-dark navigation">
+        <div class="container">
+          <a
+            href="../index.html"
+            class="navbar-brand text-warning font-weight-bold"
+          >
+            <img class="navbar-logo" src="../images/logo1.png" />
+          </a>
+        </div>
+      </nav>
+
+      <div class="log-header">
+        <h2>Log In</h2>
+        <h3>Get news and more information</h3>
+      </div>
+      <section class="FormCard my-4 mx-5">
+        <div class="container">
+          <div class="row no-gutters" style="border: 2px solid #090162">
+            <div class="col-lg-7 px-5 pt-5">
+              <h6 class="header6 mb-4">Please login to read e-paper</h6>
+              <form>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa fa-user"></i
+                      ></span>
+                      <input
+                        type="name"
+                        class="form-control p-4"
+                        placeholder="Username"
+                        aria-label="Username"
+                        aria-describedby="basic-addon1"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa fa-lock"></i
+                      ></span>
+                      <input
+                        type="password"
+                        class="form-control p-4"
+                        placeholder="Password"
+                        aria-label="Password"
+                        aria-describedby="basic-addon1"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                    <button
+                      type="button"
+                      class="btn1 mt-3 mb-5"
+                      onclick="btnClicked()"
+                    >
+                      Login
+                    </button>
+                  </div>
+                </div>
+                <p>
+                  Don't have an account?<a href="Register.html"
+                    >Register here</a
+                  >
+                </p>
+              </form>
+            </div>
+            <div class="col-lg-5">
+              <img src="../images/laptop.jpg" class="img-fluid" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      function btnClicked() {
+        document.location.href = "Dashboard.html";
+      }
+    </script>
+  </body>
+</html>
