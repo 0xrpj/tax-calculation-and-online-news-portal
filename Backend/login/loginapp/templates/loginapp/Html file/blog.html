@@ -1,0 +1,7 @@
+<h1>Blog</h1>
+<ul>
+{% for post in object_list %}
+<li>{{ post.title }} - {{ post.auth }}<br/>
+{{ post.title }}</li>
+{% endfor %}
+</ul>
