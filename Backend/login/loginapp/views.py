@@ -60,6 +60,10 @@ def homePage(request):
     context = {}
     return render(request, 'loginapp/Html file/Home.html', context)
 
-# class Blog(ListView):
-#     model = Post
-#     template_name = 'home.html'
+class Blog(ListView):
+    model = Post
+    template_name = 'loginapp/Html file/blog.html'
+
+class Detail_Article_View(DetailView):
+    model = Post
+    template_name = 'loginapp/Html file/detailed_article.html'

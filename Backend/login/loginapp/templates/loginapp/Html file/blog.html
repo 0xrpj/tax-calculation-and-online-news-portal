@@ -1,7 +1,10 @@
 <h1>Blog</h1>
 <ul>
-{% for post in object_list %}
-<li>{{ post.title }} - {{ post.auth }}<br/>
-{{ post.title }}</li>
-{% endfor %}
+  {% for post in object_list %}
+  <li>
+    <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a>
+    - {{ post.auth.username }} - {{ post.auth.email }}<br />
+    {{ post.body }}
+  </li>
+  {% endfor %}
 </ul>

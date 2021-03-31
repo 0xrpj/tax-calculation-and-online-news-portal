@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import Blog, Detail_Article_View
 
 
 urlpatterns = [
@@ -7,5 +8,6 @@ urlpatterns = [
     path('', views.loginPage, name="login"),
     path('logout/', views.logoutUser, name="logout"),
     path('home/', views.homePage, name="home"),
-    # path('blog/', views.Blog, name="Blog"),
+    path('blog/', Blog.as_view(), name="Blog"),
+    path('article/<int:pk>', Detail_Article_View.as_view(), name="article-detail"),
 ]
