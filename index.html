@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Tax Management System</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -20,12 +20,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body style="background-color: rgb(219, 226, 226);">
 	<div class="header">
 		<nav class="navbar navbar-expand-md navbar-dark navigation">
 			<div class="container">
 				<a href="index.html" class="navbar-brand text-warning font-weight-bold"> 	
-					<img class ="navbar-logo" src = "../images/logo1.png">
+					<img class ="navbar-logo" src = "images/logo1.png">
 				</a>
 
 				<button class ="navbar-toggler type="button" data-toggle="collapse" data-target="#collapsenavbar">
@@ -35,10 +35,10 @@
 				<div class="collapse navbar-collapse text-center " id="collapsenavbar">
 					<ul class="navbar-nav ml-auto mr-auto">
 						<li class="nav-item"> 
-							<a href="" class="nav-link text-white">HOME</a>
+							<a href="index.html" class="nav-link text-white">HOME</a>
 						</li>
 						<li class="nav-item"> 
-							<a href="" class="nav-link text-white">POLITICS</a>
+							<a href="pages/politics.html" class="nav-link text-white">POLITICS</a>
 						</li>
 						<li class="nav-item"> 
 							<a href="" class="nav-link text-white">BUSINESS</a>
@@ -57,14 +57,38 @@
 				        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
 				        <button class="btn btn-outline-success btn-sm ml-2" type="submit">Search</button>
 				      </form>
-					
 				</div>
-				
+			</div>
+		</nav>
+	</div>
+	<!-- page content-->	
+	<div class="container" style= "background-color: white">
+		<div class="row">
+			<div class="col-lg-8 md-8 sm-10">
+				<div class="news-portal">
+					<img src="images/vaccine.jpg" class="image">
+					<h3 class="title">COVID 19 vaccination campaign postponed untill new batch of vacciness arrive in Nepal
+					</h3>
+				</div>
+			</div>
+			<div class="col-lg-4 md-8 sm-10">
+				<div class="row">
+					<div class="news-portal">
+						<img src="images/politics.jpg" class="image1">
+						<h5 class="title">With neither side ready to backdown , confrontation in UML continues
+						</h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class="news-portal">
+						<img src="images/sports.jpg" class="image1">
+						<h5 class="title">Chelesea progressed to champion league quater final
+						</h5>
+					</div>
+				</div>
 			</div>
 			
-		</nav>
-		
+		</div>
 	</div>
-
 </body>
 </html>
