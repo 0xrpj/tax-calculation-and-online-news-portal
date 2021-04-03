@@ -81,6 +81,9 @@ body{
     margin-top: 0rem;
 }
 
+.alertIcon{
+	font-size: 15px;
+}
 
 @media (max-width: 768px){
 	#sidebar{
