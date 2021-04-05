@@ -4,10 +4,10 @@ from django.contrib import messages
 
 from django.contrib.auth import authenticate, login, logout 
 from .models import Post
-from .forms import CreateUserForm
+from .forms import CreateUserForm, PostForm
 
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView , DetailView
+from django.views.generic import ListView , DetailView, CreateView
 
 
 def registerPage(request):
@@ -58,7 +58,7 @@ def logoutUser(request):
 @login_required(login_url='login')
 def homePage(request):
     context = {}
-    return render(request, 'loginapp/Html file/Home.html', context)
+    return render(request, 'loginapp/Html file/index.html', context)
 
 class Blog(ListView):
     model = Post
@@ -67,3 +67,9 @@ class Blog(ListView):
 class Detail_Article_View(DetailView):
     model = Post
     template_name = 'loginapp/Html file/detailed_article.html'
+
+class AddPostView(CreateView, ListView):
+    model = Post
+    form_class = PostForm
+    template_name = 'loginapp/Html file/Dashboard.html'
+    # fields = '__all__'

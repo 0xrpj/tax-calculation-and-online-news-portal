@@ -15,3 +15,23 @@
 	font-size: 18px;
 }
 
+/*index.html page-content css*/
+.news-portal{
+	margin-top: 15px;
+}
+.image{
+	width: 696px;
+	height: 500px;
+	/*left: 118px;
+	top: 149px;*/
+}
+.image1{
+	width: 350px;
+	height: 200px;
+	left: 118px;
+	top: 149px;
+}
+.title{
+	font-weight: bold;
+	margin-top: 5px;
+}

@@ -105,10 +105,10 @@
       <nav class="navbar navbar-expand-md navbar-dark navigation">
         <div class="container">
           <a
-            href="Home.html"
+            href="{% url 'home' %}"
             class="navbar-brand text-warning font-weight-bold"
           >
-            <img class="navbar-logo" src="{% static 'Image/logo1.png' %}" />
+            <img class="navbar-logo" src="{% static 'Images/logo1.png' %}" />
           </a>
         </div>
       </nav>
@@ -178,7 +178,7 @@
 
             <div class="col-lg-5">
               <img
-                src="{% static 'Image/laptop.jpg' %}"
+                src="{% static 'Images/laptop.jpg' %}"
                 class="img-fluid"
                 alt=""
               />
