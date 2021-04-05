@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +7,7 @@
       rel="stylesheet"
       type="text/css"
       href="
-	../css/style.css"
+	{% static 'css/style.css' %}"
     />
     <!-- Latest compiled and minified CSS -->
     <link
@@ -45,8 +46,7 @@
       .log-header {
         margin-top: 10px;
         margin-left: 20px;
-        line-height: 60px;
-        text-align: center;
+        line-height: 54px;
       }
 
       .log-header h2 {
@@ -88,7 +88,6 @@
         border-radius: 4px;
         font-weight: bold;
         box-shadow: 5px 5px 5px grey;
-        text-transform: uppercase;
       }
       .btn1:hover {
         background-color: white;
@@ -106,10 +105,10 @@
       <nav class="navbar navbar-expand-md navbar-dark navigation">
         <div class="container">
           <a
-            href="../index.html"
+            href="{% url 'home' %}"
             class="navbar-brand text-warning font-weight-bold"
           >
-            <img class="navbar-logo" src="../images/logo1.png" />
+            <img class="navbar-logo" src="{% static 'Images/logo1.png' %}" />
           </a>
         </div>
       </nav>
@@ -123,7 +122,8 @@
           <div class="row no-gutters" style="border: 2px solid #090162">
             <div class="col-lg-7 px-5 pt-5">
               <h6 class="header6 mb-4">Please login to read e-paper</h6>
-              <form>
+              <form method="POST" action="">
+                {% csrf_token %}
                 <div class="form-row">
                   <div class="col-lg-7">
                     <div class="input-group mb-3">
@@ -131,7 +131,8 @@
                         ><i class="fa fa-user"></i
                       ></span>
                       <input
-                        type="name"
+                        type="username"
+                        name="username"
                         class="form-control p-4"
                         placeholder="Username"
                         aria-label="Username"
@@ -149,6 +150,7 @@
                       ></span>
                       <input
                         type="password"
+                        name="password"
                         class="form-control p-4"
                         placeholder="Password"
                         aria-label="Password"
@@ -160,33 +162,30 @@
                 </div>
                 <div class="form-row">
                   <div class="col-lg-7">
-                    <button
-                      type="button"
-                      class="btn1 mt-3 mb-5"
-                      onclick="btnClicked()"
-                    >
-                      Login
-                    </button>
+                    <input class="btn1 mt-3 mb-5" type="submit" value="Login" />
                   </div>
                 </div>
                 <p>
-                  Don't have an account?<a href="Register.html"
+                  Don't have an account?<a href="{% url 'register' %}"
                     >Register here</a
                   >
                 </p>
+                {% for message in messages %}
+                <p id="messages">{{message}}</p>
+                {% endfor %}
               </form>
             </div>
+
             <div class="col-lg-5">
-              <img src="../images/laptop.jpg" class="img-fluid" alt="" />
+              <img
+                src="{% static 'Images/laptop.jpg' %}"
+                class="img-fluid"
+                alt=""
+              />
             </div>
           </div>
         </div>
       </section>
     </div>
-    <script>
-      function btnClicked() {
-        document.location.href = "Dashboard.html";
-      }
-    </script>
   </body>
 </html>

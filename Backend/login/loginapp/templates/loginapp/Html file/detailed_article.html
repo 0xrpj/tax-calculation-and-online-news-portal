@@ -1,0 +1,8 @@
+<h1>{{ post.title }}</h1>
+<small>By: {{ post.auth.username }}</small>
+<br />
+<hr />
+<br />
+{{ post.body }}
+<br /><br />
+<a href="{% url 'Blog' %}">Back</a>

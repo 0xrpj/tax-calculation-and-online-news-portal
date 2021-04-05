@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,7 +8,7 @@
       rel="stylesheet"
       type="text/css"
       href="
-	../css/Register.css"
+	  {% static 'css/Register.css' %}"
     />
     <!-- Latest compiled and minified CSS -->
     <link
@@ -40,23 +41,24 @@
   <body>
     <nav class="navbar navbar-expand-md navbar-dark navigation">
       <div class="container">
-        <a
-          href="../index.html"
-          class="navbar-brand text-warning font-weight-bold"
-        >
-          <img class="navbar-logo" src="../images/logo1.png" />
+        <a href="Home.html" class="navbar-brand text-warning font-weight-bold">
+          <img class="navbar-logo" src="{% static 'Images/logo1.png' %}" />
         </a>
       </div>
     </nav>
     <div class="container">
       <div class="row">
         <div class="col-lg-6 mt-5">
-          <img class="personalizationImg" src="../images/Personalization.png" />
+          <img
+            class="personalizationImg"
+            src="{% static 'Images/Personalization.png' %}"
+          />
         </div>
         <div class="col-lg-6 mt-5">
           <div class="login-container">
-            <form action="Register.html">
-              <img class="avatar" src="../images/Avatar.png" />
+            <form method="POST">
+              {% csrf_token %}
+              <img class="avatar" src="{% static 'Images/Avatar.png' %}" />
               <h2>Welcome</h2>
               <div class="input-div one focus">
                 <div class="i">
@@ -64,7 +66,7 @@
                 </div>
                 <div>
                   <h5>Username</h5>
-                  <input type="text" name="Username" class="input" required />
+                  <div class="input">{{form.username}}</div>
                 </div>
               </div>
               <div class="input-div two focus">
@@ -73,7 +75,7 @@
                 </div>
                 <div>
                   <h5>E-mail</h5>
-                  <input type="email" name="Email" class="input" required />
+                  <div class="input">{{form.email}}</div>
                 </div>
               </div>
               <div class="input-div three focus">
@@ -82,12 +84,7 @@
                 </div>
                 <div>
                   <h5>Password</h5>
-                  <input
-                    type="Password"
-                    name="Password"
-                    class="input"
-                    required
-                  />
+                  <div class="input">{{form.password1}}</div>
                 </div>
               </div>
               <div class="input-div four focus">
@@ -96,21 +93,19 @@
                 </div>
                 <div>
                   <h5>Confirm Password</h5>
-                  <input
-                    type="Password"
-                    name="Password"
-                    class="input"
-                    required
-                  />
+                  <div class="input">{{form.password2}}</div>
                 </div>
               </div>
-              <button class="button mt-3 mb-5">Register</button>
+              <button class="button">Register</button>
+              Already have an account?
+              <a href="{% url 'login' %}" class="ml-2">Login</a>
             </form>
           </div>
+          {{form.errors}}
         </div>
       </div>
     </div>
 
-    <!-- <script type="text/javascript" src="js/"></script> -->
+    <script type="text/javascript" src="js/"></script>
   </body>
 </html>
