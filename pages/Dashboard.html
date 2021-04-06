@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tax Management System</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="
+	../css/Dashboard.css"
+    />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="vertical-nav" id="sidebar">
+      <div class="py-4 px-3 mb-4">
+        <div class="media d-flex align-items-center">
+          <img src="../images/boy.jpg" alt="..." width="80" height="80" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+          <div class="media-body">
+            <h4 class="m-0"0>Admin</h4>
+            <p class="font-weight-normal text-muted mb-0">Boss</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-black font-weight-bold text-uppercase px-3 small pb-4 mb-0 ">
+        Dashboard
+      </p>
+
+      <ul class="nav flex-column mb-0">
+        <li class="nav-item">
+          <a href="Dashboard.html" class="nav-link text-dark bg-light">
+            <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>Home
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="page-content" id="content">
+      <nav class="navbar navbar-expand-md navbar-dark navigation">
+        <div class="container">
+          <div>
+          <i class="fa fa-bars mr-2" id="sidebarCollapse" style="color: white; font-size: 20px"></i>
+          <a href="../index.html" class="navbar-brand text-warning font-weight-bold">  
+            <img class ="navbar-logo" src = "../images/logo1.png">
+          </a>
+          </div>
+          <form class="d-flex">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success btn-sm ml-2" type="submit">Search</button>
+          </form>
+          <div style="margin-bottom:5px">
+          <!--add button--> 
+           <button class="addButton mr-5 mb-1" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            
+            <!--diaglog box of add-->
+             <!-- Modal -->
+              <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">      
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Add news</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Title</label>
+                        <input type="title" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+                      </div>
+                       <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Author</label>
+                        <input type="author" class="form-control" id="exampleFormControlInput1" placeholder="Author">
+                      </div>
+                      <label for="sel1">Category:</label>
+                      <select class="form-control" id="sel1">
+                        <option>Politics</option>
+                        <option>Sports</option>
+                        <option>Business</option>
+                        <option>Entertainment</option>
+                      </select>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Body</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-success" data-dismiss="modal">Add</button>
+                      <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            <!--logout -->
+            <i class="fa fa-user-circle" style="color: white; font-size: 34px;"></i>
+          </div>
+        </div>
+      </nav>
+
+  <!--newss card--> 
+     <div class="container">
+        <div class="row">
+          <div class="col-sm mt-5">
+              <div class="card" style="width: 18rem; background-color: #B4B8AB">
+                <div class="card-body">
+                  <h5 class="card-title">Dahal files appeal to review verdict that revived UML, Maoist Center</h5>
+                  <h6 class="card-subtitle mb-2 text-black">Politics</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>  
+              <button type="button" class="btn btn-warning mt-2 px-5 mr-2" data-toggle="modal" data-target="#myModal1">Edit</button>
+              <button type="button" class="btn btn-danger mt-2 px-5" data-toggle="modal" data-target="#myModal2">Delete</button>        
+          </div>
+             <!--Edit button Popup for all news portal-->
+             <!-- Modal -->
+              <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal-dialog">      
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Edit news</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Title</label>
+                        <input type="title" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+                      </div>
+                       <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Author</label>
+                        <input type="author" class="form-control" id="exampleFormControlInput1" placeholder="Author">
+                      </div>
+                      <label for="sel1">Category:</label>
+                      <select class="form-control" id="sel1">
+                        <option>Politics</option>
+                        <option>Sports</option>
+                        <option>Business</option>
+                        <option>Entertainment</option>
+                      </select>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Body</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-warning" data-dismiss="modal">Edit</button>
+                      <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>        
+              </div>
+              <!--Delete button Popup for all news portal-->
+             <!-- Modal -->
+              <div class="modal fade" id="myModal2" role="dialog">
+                <div class="modal-dialog">      
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Delete news</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                    <!--<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>-->                     <p>Are you Sure you want to delete this post?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                      <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>        
+              </div>
+
+              <!--Another new box-->
+              <div class="col-sm mt-5">
+              <div class="card" style="width: 18rem; background-color: #B4B8AB">
+                <div class="card-body">
+                  <h5 class="card-title">Dahal files appeal to review verdict that revived UML, Maoist Center</h5>
+                  <h6 class="card-subtitle mb-2 text-black">Politics</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>  
+              <button type="button" class="btn btn-warning mt-2 px-5 mr-2" data-toggle="modal" data-target="#myModal1">Edit</button>
+              <button type="button" class="btn btn-danger mt-2 px-5">Delete</button>        
+          </div>
+          <div class="col-sm mt-5">
+              <div class="card" style="width: 18rem; background-color: #B4B8AB">
+                <div class="card-body">
+                  <h5 class="card-title">Dahal files appeal to review verdict that revived UML, Maoist Center</h5>
+                  <h6 class="card-subtitle mb-2 text-black">Politics</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>  
+              <button type="button" class="btn btn-warning mt-2 px-5 mr-2" data-toggle="modal" data-target="#myModal1">Edit</button>
+              <button type="button" class="btn btn-danger mt-2 px-5">Delete</button>        
+          </div>
+            </div>
+          </div>
+        </div>
+  </body>
+  <script>
+    $(function(){
+      $('#sidebarCollapse').on('click',function(){
+        $('#sidebar, #content').toggleClass('active');
+      });
+    });
+  </script>
+</html>
