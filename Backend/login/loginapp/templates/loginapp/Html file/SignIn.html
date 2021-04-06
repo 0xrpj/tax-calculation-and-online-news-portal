@@ -105,10 +105,10 @@
       <nav class="navbar navbar-expand-md navbar-dark navigation">
         <div class="container">
           <a
-            href="{% url 'home' %}"
+            href="Home.html"
             class="navbar-brand text-warning font-weight-bold"
           >
-            <img class="navbar-logo" src="{% static 'Images/logo1.png' %}" />
+            <img class="navbar-logo" src="{% static 'Image/logo1.png' %}" />
           </a>
         </div>
       </nav>
@@ -131,11 +131,11 @@
                         ><i class="fa fa-user"></i
                       ></span>
                       <input
-                        type="username"
-                        name="username"
+                        type="email"
+                        name="email"
                         class="form-control p-4"
-                        placeholder="Username"
-                        aria-label="Username"
+                        placeholder="Email-address"
+                        aria-label="Email-address"
                         aria-describedby="basic-addon1"
                         required
                       />
@@ -178,7 +178,7 @@
 
             <div class="col-lg-5">
               <img
-                src="{% static 'Images/laptop.jpg' %}"
+                src="{% static 'Image/laptop.jpg' %}"
                 class="img-fluid"
                 alt=""
               />
