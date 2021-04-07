@@ -3,7 +3,7 @@
   {% for post in object_list %}
   <li>
     <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a>
-    -{{ post.category}} - {{ post.auth.username }} - {{ post.auth.email }}<br />
+    -{{ post.category}} - {{ post.auth.username }} - {{ post.auth.email }} - <a href="{% url 'update_post' post.pk %}">Edit</a> <br />
     {{ post.body }}
   </li>
   {% endfor %}
