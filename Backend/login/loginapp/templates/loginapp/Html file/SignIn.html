@@ -79,21 +79,23 @@
         font-family: "Poppins";
       }
       .btn1 {
-        border: none;
-        outline: none;
-        height: 50px;
-        width: 100%;
-        background-color: #090162;
-        color: white;
-        border-radius: 4px;
-        font-weight: bold;
-        box-shadow: 5px 5px 5px grey;
+     	 display: block;
+	    border: none;
+      outline: none;
+      height: 50px;
+      width: 100%;
+	    border-radius: 25px;
+	    margin: 1rem 0;
+      font-size: 1.2rem;
+      background-image: linear-gradient(to right, #38d39f, #090162, #38d39f);
+      color: #fff;
+      font-family: 'Poppins';
+      background-size: 200%;
+      transition: .5s;
+      text-transform: uppercase;
       }
       .btn1:hover {
-        background-color: white;
-        border: 1px solid;
-        color: #090162;
-        box-shadow: none;
+        background-position: right;
       }
       .form-control {
         box-shadow: 3px 3px 5px grey;
@@ -105,10 +107,10 @@
       <nav class="navbar navbar-expand-md navbar-dark navigation">
         <div class="container">
           <a
-            href="Home.html"
+            href="{% url 'home' %}"
             class="navbar-brand text-warning font-weight-bold"
           >
-            <img class="navbar-logo" src="{% static 'Image/logo1.png' %}" />
+            <img class="navbar-logo" src="{% static 'Images/logo1.png' %}" />
           </a>
         </div>
       </nav>
@@ -131,11 +133,11 @@
                         ><i class="fa fa-user"></i
                       ></span>
                       <input
-                        type="email"
-                        name="email"
+                        type="username"
+                        name="username"
                         class="form-control p-4"
-                        placeholder="Email-address"
-                        aria-label="Email-address"
+                        placeholder="Username"
+                        aria-label="Username"
                         aria-describedby="basic-addon1"
                         required
                       />
@@ -178,7 +180,7 @@
 
             <div class="col-lg-5">
               <img
-                src="{% static 'Image/laptop.jpg' %}"
+                src="{% static 'Images/laptop.jpg' %}"
                 class="img-fluid"
                 alt=""
               />
