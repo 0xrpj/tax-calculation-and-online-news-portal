@@ -41,7 +41,10 @@
   <body>
     <nav class="navbar navbar-expand-md navbar-dark navigation">
       <div class="container">
-        <a href="Home.html" class="navbar-brand text-warning font-weight-bold">
+        <a
+          href="{% url 'home' %}"
+          class="navbar-brand text-warning font-weight-bold"
+        >
           <img class="navbar-logo" src="{% static 'Images/logo1.png' %}" />
         </a>
       </div>
@@ -96,7 +99,7 @@
                   <div class="input">{{form.password2}}</div>
                 </div>
               </div>
-              <button class="button ">Register</button>
+              <button class="button">Register</button>
               Already have an account?
               <a href="{% url 'login' %}" class="ml-2">Login</a>
             </form>

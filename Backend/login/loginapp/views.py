@@ -7,7 +7,7 @@ from .models import Post
 from .forms import CreateUserForm, PostForm ,EditForm
 
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView , DetailView, CreateView , UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 
 def registerPage(request):
@@ -68,7 +68,7 @@ class Detail_Article_View(DetailView):
     model = Post
     template_name = 'loginapp/Html file/detailed_article.html'
 
-class AddPostView(CreateView, ListView, UpdateView):
+class AddPostView(CreateView, ListView):
     model = Post
     form_class = PostForm
     template_name = 'loginapp/Html file/Dashboard.html'
@@ -78,4 +78,4 @@ class UpdatePostView(UpdateView):
     model = Post
     form_class = EditForm
     template_name = 'loginapp/Html file/Dashboard.html'
-    # fields = ['title','auth' ,'body','category']
+    fields = ['title','auth' ,'body','category']
