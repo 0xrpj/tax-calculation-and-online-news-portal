@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tax Management System</title>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="
+        ../css/Dashboard.css"
+        />
+        <!-- Latest compiled and minified CSS -->
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+    
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+          rel="stylesheet"
+        />
+    </head>
+    <body>
+            <nav class="navbar navbar-expand-md navbar-dark navigation">
+              <div class="container">
+                <div>
+                <a href="../index.html" class="navbar-brand text-warning font-weight-bold">  
+                  <img class ="navbar-logo" src = "../images/logo1.png">
+                </a>
+                </div>
+                <form class="d-flex">
+                  <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success btn-sm ml-2" type="submit">Search</button>
+                </form>
+                <div style="margin-bottom:5px">
+                  <!--logout -->
+                  <i class="fa fa-user-circle" style="color: white; font-size: 34px;"></i>
+                </div>
+              </div>
+            </nav>
+            
+            <div class="modal-dialog">      
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Edit news</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label">Title</label>
+                      <input type="title" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+                    </div>
+                     <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label">Author</label>
+                      <input type="author" class="form-control" id="exampleFormControlInput1" placeholder="Author">
+                    </div>
+                    <label for="sel1">Category:</label>
+                    <select class="form-control" id="sel1">
+                      <option>Politics</option>
+                      <option>Sports</option>
+                      <option>Business</option>
+                      <option>Entertainment</option>
+                    </select>
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Body</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-warning px-4">Edit</button>
+                    <button type="button" class="btn btn-info">Cancel</button>
+                  </div>
+                </div>
+                
+              </div>
+    </body>
+</html>
