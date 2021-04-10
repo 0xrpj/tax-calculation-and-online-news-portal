@@ -177,7 +177,7 @@
                       
                       class="btn btn-success"
                     >
-                      Add
+                      Update
                     </button>
                     <button
                       type="button"
@@ -235,6 +235,8 @@
           </div>
           <!--Edit button Popup for all news portal-->
           <!-- Modal -->
+<form method="POST">
+  {% csrf_token %}
           <div class="modal fade" id="myModal1" role="dialog">
             <div class="modal-dialog">
               <!-- Modal content-->
@@ -298,9 +300,9 @@
                 </div>
                 <div class="modal-footer">
                   <button
-                    type="submit"
+                    
                     class="btn btn-warning"
-                    data-dismiss="modal"
+                    
                   >
                     Edit
                   </button>
@@ -315,6 +317,8 @@
               </div>
             </div>
           </div>
+          </form>
+
           <!--Delete button Popup for all news portal-->
           <!-- Modal -->
           <div class="modal fade" id="myModal2" role="dialog">

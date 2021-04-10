@@ -10,6 +10,6 @@ urlpatterns = [
     path('home/', views.homePage, name="home"),
     path('blog/', Blog.as_view(), name="Blog"),
     path('article/<int:pk>', Detail_Article_View.as_view(), name="article-detail"),
-    path('article/edit/<int:pk>',UpdatePostView.as_view(), name="update_post"),
+    path('article/<int:pk>/update',UpdatePostView.as_view(), name="update_post"),
     path('dashboard/', AddPostView.as_view(), name='dashboard')
 ]

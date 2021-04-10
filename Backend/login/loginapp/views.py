@@ -76,6 +76,5 @@ class AddPostView(CreateView, ListView):
 
 class UpdatePostView(UpdateView):
     model = Post
-    form_class = EditForm
-    template_name = 'loginapp/Html file/Dashboard.html'
+    template_name = 'loginapp/Html file/edit.html'
     fields = ['title','auth' ,'body','category']
