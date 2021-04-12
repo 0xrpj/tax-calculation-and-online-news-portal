@@ -1,13 +1,16 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin 
+from django.urls import reverse, reverse_lazy
+
 
 from django.contrib.auth import authenticate, login, logout 
 from .models import Post
 from .forms import CreateUserForm, PostForm ,EditForm
 
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView , DeleteView
 
 
 def registerPage(request):
@@ -68,13 +71,29 @@ class Detail_Article_View(DetailView):
     model = Post
     template_name = 'loginapp/Html file/detailed_article.html'
 
-class AddPostView(CreateView, ListView):
+class AddPostView(LoginRequiredMixin,CreateView, ListView):
     model = Post
     form_class = PostForm
     template_name = 'loginapp/Html file/Dashboard.html'
     # fields = '__all__'
 
-class UpdatePostView(UpdateView):
+class UpdatePostView(LoginRequiredMixin,UpdateView):
     model = Post
     template_name = 'loginapp/Html file/edit.html'
     fields = ['title','auth' ,'body','category']
+    success_url = reverse_lazy('dashboard')
+    def from_valid(self, form):
+        form.instance.auth = self.request.user
+        return super().form_valid(form)
+
+class  DeletePostView(DeleteView,LoginRequiredMixin):
+    model = Post
+    template_name = 'loginapp/Html file/Delete.html'
+    success_url = reverse_lazy('dashboard')
+    def from_valid (self,form) :
+        form.instance.auth = self.request.user
+        return super().form_valid(form)
+
+
+
+

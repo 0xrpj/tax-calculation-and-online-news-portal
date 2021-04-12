@@ -22,4 +22,4 @@ class Post(models.Model):
         return self.title + ' | ' + str(self.auth)
     
     def get_absolute_url(self):
-        return reverse('dashboard')
+        return reverse('dashboard' , kwargs={'pk': self.pk} )
