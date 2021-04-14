@@ -106,7 +106,7 @@
             <!--diaglog box of add-->
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
-              <form method="POST">
+              <form method="POST" enctype="multipart/form-data">
               {% csrf_token %}
               <div class="modal-dialog">
                 <!-- Modal content-->
@@ -133,6 +133,13 @@
                       id="exampleFormControlInput1"
                       >{{form.title}}</div>
                     </div>
+                    <label for="exampleFormControlInput1" class="form-label"
+                        >Image</label>
+                        <div
+                      id="exampleFormControlInput1"
+                        >{{form.header_image}}
+                        </div>
+                        <br>
                     <div class="mb-3">
                       <label for="exampleFormControlInput1" class="form-label"
                         >Author</label
@@ -217,23 +224,10 @@
               </div>
             </div>
             <form method="post" >
-            <button
-              type="button"
-              class="btn btn-warning mt-2 px-5 mr-2"
-              data-toggle="modal"
-              data-target="#myModal1">
-              <a href="{% url 'update_post' post.id %}">Edit</a>
-          </button>
-
-         
-            <button
-              type="button"
-              class="btn btn-danger mt-2 px-5"
-              data-toggle="modal"
-              data-target="#myModal2"
-            >
-            <a href="{% url 'delete_post' post.id %}">Delete</a>
-            </button>
+              <!-- Edit button -->
+              <a href="{% url 'update_post' post.id %}" class="btn btn-warning mt-2 px-5 mr-2">Edit</a>
+              <!-- Delete button -->
+            <a class="btn btn-danger mt-2 px-5 mr-2"href="{% url 'delete_post' post.id %}">Delete</a>
           </div>
         </form>
           <!-- Edit button Popup for all news portal -->

@@ -19,7 +19,7 @@ class CreateUserForm(UserCreationForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields=('title', 'auth', 'category', 'body')
+        fields=('title', 'auth', 'category', 'body', 'header_image')
 
         widgets={
             'title': forms.TextInput(attrs={'class': 'form-control'}),
