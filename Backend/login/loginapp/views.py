@@ -34,7 +34,7 @@ def registerPage(request):
 
 def loginPage(request):
     if request.user.is_authenticated:
-        return redirect('login')
+        return redirect('home')
     else:
 
         if request.method == 'POST':
@@ -75,12 +75,14 @@ class AddPostView(LoginRequiredMixin,CreateView, ListView):
     model = Post
     form_class = PostForm
     template_name = 'loginapp/Html file/Dashboard.html'
+    success_url = reverse_lazy('dashboard')
     # fields = '__all__'
 
 class UpdatePostView(LoginRequiredMixin,UpdateView):
     model = Post
+    form_class = EditForm
     template_name = 'loginapp/Html file/edit.html'
-    fields = ['title','auth' ,'body','category']
+    # fields = ['title','auth' ,'body','category']
     success_url = reverse_lazy('dashboard')
     def from_valid(self, form):
         form.instance.auth = self.request.user
