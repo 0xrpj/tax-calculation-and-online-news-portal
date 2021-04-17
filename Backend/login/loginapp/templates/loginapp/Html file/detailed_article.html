@@ -3,6 +3,10 @@
 <br />
 <hr />
 <br />
+{% if post.header_image %}
+<img src="{{ post.header_image.url }}"><br /><br />
+{% endif %}
 {{ post.body }}
-<br /><br />
+<br />
+<br />
 <a href="{% url 'Blog' %}">Back</a>
