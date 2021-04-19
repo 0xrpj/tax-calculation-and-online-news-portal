@@ -132,6 +132,28 @@
                                 <i class="fa fa-twitter-square"  style="color: #405DE6;"></i>
                             </div>
                         </div>
+
+                        <!-- This is for comments section -->
+                        <div class="row">
+                                <div style="padding: 5%; width:100%" class="comment-section" id="disqus_thread"></div>
+
+                                <script>
+
+                                    var disqus_config = function () {
+                                    this.page.url = 'http://localhost/';  // Replace PAGE_URL with your page's canonical URL variable
+                                    this.page.identifier = 'np03a190017'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                    };
+                                    
+                                    (function() { // DON'T EDIT BELOW THIS LINE
+                                    //var disqus_developer = 1; // this would set it to developer mode
+                                    var d = document, s = d.createElement('script');
+                                    s.src = 'https://tms-3.disqus.com/embed.js';
+                                    s.setAttribute('data-timestamp', +new Date());
+                                    (d.head || d.body).appendChild(s);
+                                    })();
+                                </script>
+
+                        </div>
                     </div>
 
                     <!--Right side news code-->
