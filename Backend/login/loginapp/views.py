@@ -58,10 +58,10 @@ def logoutUser(request):
     return redirect('login')
 
 
-@login_required(login_url='login')
-def homePage(request):
-    context = {}
-    return render(request, 'loginapp/Html file/index.html', context)
+# @login_required(login_url='login')
+# def homePage(request):
+#     context = {}
+#     return render(request, 'loginapp/Html file/index.html', context)
 
 class Blog(ListView):
     model = Post
@@ -70,6 +70,11 @@ class Blog(ListView):
 class Detail_Article_View(DetailView):
     model = Post
     template_name = 'loginapp/Html file/detailed_article.html'
+
+class HomeView(LoginRequiredMixin, ListView):
+    model= Post
+    template_name = 'loginapp/Html file/index.html'
+
 
 class AddPostView(LoginRequiredMixin,CreateView, ListView):
     model = Post

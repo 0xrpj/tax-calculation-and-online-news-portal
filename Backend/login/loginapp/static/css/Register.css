@@ -142,23 +142,22 @@ input{
 
 
 .button{
-	 display: block;
 	 border: none;
      outline: none;
      height: 50px;
      width: 100%;
-	 border-radius: 25px;
-	 margin: 1rem 0;
-     font-size: 1.2rem;
-	 background-image: linear-gradient(to right, #38d39f, #090162, #38d39f);
-	 color: #fff;
-	 font-family: 'Poppins';
-	 background-size: 200%;
-	 transition: .5s;
-	 text-transform: uppercase;
+     background-color: #090162;
+     color: white;
+     border-radius: 4px;
+     font-weight: bold;
+     box-shadow: 5px 5px 5px grey;
+     text-transform: uppercase;
 }
  .button:hover {
-       background-position: right;
+        background-color: white;
+        border: 1px solid;
+        color: #090162;
+        box-shadow: none;
       }
 
 @media screen and (max-width: 1000px){
