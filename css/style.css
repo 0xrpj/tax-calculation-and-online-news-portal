@@ -12,7 +12,7 @@
 .nav-link{
 	font-family: Poppins;
 	margin: 10px;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 /*index.html page-content css*/
@@ -22,8 +22,7 @@
 .image{
 	width: 696px;
 	height: 500px;
-	/*left: 118px;
-	top: 149px;*/
+
 }
 .image1{
 	width: 350px;
@@ -34,4 +33,115 @@
 .title{
 	font-weight: bold;
 	margin-top: 5px;
+	color: black;
+}
+
+
+.advertisement{
+	width: 95%;
+	margin-top: 2rem;
+}
+
+.category{
+	margin-top: 3rem;
+}
+.businessImg{
+	width: 250px;
+	height: 200px;
+	left: 118px;
+	top: 149px;
+}
+
+.businessHeading{
+	font-size: 15px;
+	font-family: 'Poppins';
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.businessTopic{
+	font-size: 12px;
+	font-family: 'Poppins';
+	margin-top: 8px;
+	color: grey;
+}
+
+/*footer css of index.html*/
+.footer{
+	background-color: #2832C2; 
+	color: white;
+}
+
+.footer-content{
+	margin-top: 20px;
+}
+
+.icons{
+	background-color: ghostwhite;
+	border: 1px solid white;
+	border-radius: 50%;
+	font-size: 15px !important;
+}
+@media (max-width: 1024px){
+	.image{
+		width: 600px;
+		height: 500px;
+	}
+	.image1{
+		width: 300px;
+		height: 200px;
+	}
+}
+@media (max-width: 768px){
+	.image1{
+		width: 600px;
+		height:300px;
+		margin-left: 10px;
+	}
+	.title{
+		margin-left: 10px;
+	}
+}
+@media (max-width: 540px){
+	.image{
+		width: 500px;
+		height: 300px;
+	}
+	.image1{
+		width: 500px;
+		height:300px;
+	}
+}
+@media (max-width: 414px){
+	.image{
+		width: 350px;
+		height: 200px;
+	}
+	.image1{
+		width: 350px;
+		height: 200px;
+	}
+}
+@media (max-width: 360px){
+	.image{
+		width: 300px;
+		height: 200px;
+	}
+	.image1{
+		width: 320px;
+		height: 200px;
+	}
+}
+@media (max-width: 280px){
+	.image{
+		width: 250px;
+		height: 200px;
+	}
+	.image1{
+		width: 250px;
+		height: 200px;
+	}
+	.title{
+		font-size: 15px;
+	}
 }

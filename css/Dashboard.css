@@ -1,6 +1,5 @@
 body{
-/*	background-image: linear-gradient(135.9deg, rgba(109,25,252,1) 16.4%,rgba(125,31.16,1) 56.1%);
-*/	min-height: 100vh;
+	min-height: 100vh;
 	overflow-x: hidden;
 }
 
@@ -83,6 +82,10 @@ body{
 
 .alertIcon{
 	font-size: 15px;
+}
+
+.card-img-top{
+	height: 25vh;
 }
 
 @media (max-width: 768px){

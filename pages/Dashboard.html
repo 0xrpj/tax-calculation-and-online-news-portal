@@ -32,6 +32,7 @@
     />
   </head>
   <body>
+    <!--vertical navbar-->
     <div class="vertical-nav" id="sidebar">
       <div class="py-4 px-3 mb-4">
         <div class="media d-flex align-items-center">
@@ -55,6 +56,7 @@
       </ul>
     </div>
     <div class="page-content" id="content">
+      <!--top navbar-->
       <nav class="navbar navbar-expand-md navbar-dark navigation">
         <div class="container">
           <div>
@@ -90,8 +92,12 @@
                         <label for="exampleFormControlInput1" class="form-label">Author</label>
                         <input type="author" class="form-control" id="exampleFormControlInput1" placeholder="Author">
                       </div>
+                      <div class="mb-3">
+                        <label for="formFile" class="form-label">Choose a picture</label>
+                        <input class="form-control" type="file" id="formFile" style="padding-bottom: 36px;">
+                      </div>
                       <label for="sel1">Category:</label>
-                      <select class="form-control" id="sel1">
+                      <select class="form-control mb-3" id="sel1">
                         <option>Politics</option>
                         <option>Sports</option>
                         <option>Business</option>
@@ -121,6 +127,7 @@
         <div class="row">
           <div class="col-sm mt-5">
               <div class="card" style="width: 18rem; background-color: #B4B8AB">
+                <img src="../images/pathao.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Dahal files appeal to review verdict that revived UML, Maoist Center</h5>
                   <h6 class="card-subtitle mb-2 text-black">Politics</h6>
@@ -132,44 +139,6 @@
               </a>
               <button type="button" class="btn btn-danger mt-2 px-5" data-toggle="modal" data-target="#myModal2">Delete</button>        
           </div>
-             <!--Edit button Popup for all news portal-->
-             <!-- Modal -->
-              <div class="modal fade" id="myModal1" role="dialog">
-                <div class="modal-dialog">      
-                  <!-- Modal content-->
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 class="modal-title">Edit news</h4>
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Title</label>
-                        <input type="title" class="form-control" id="exampleFormControlInput1" placeholder="Title">
-                      </div>
-                       <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Author</label>
-                        <input type="author" class="form-control" id="exampleFormControlInput1" placeholder="Author">
-                      </div>
-                      <label for="sel1">Category:</label>
-                      <select class="form-control" id="sel1">
-                        <option>Politics</option>
-                        <option>Sports</option>
-                        <option>Business</option>
-                        <option>Entertainment</option>
-                      </select>
-                      <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Body</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-warning" data-dismiss="modal">Edit</button>
-                      <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>        
-              </div>
               <!--Delete button Popup for all news portal-->
              <!-- Modal -->
               <div class="modal fade" id="myModal2" role="dialog">
@@ -194,6 +163,7 @@
               <!--Another new box-->
               <div class="col-sm mt-5">
               <div class="card" style="width: 18rem; background-color: #B4B8AB">
+                <img src="../images/licence.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Dahal files appeal to review verdict that revived UML, Maoist Center</h5>
                   <h6 class="card-subtitle mb-2 text-black">Politics</h6>
@@ -205,6 +175,7 @@
           </div>
           <div class="col-sm mt-5">
               <div class="card" style="width: 18rem; background-color: #B4B8AB">
+                <img src="../images/flight.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Dahal files appeal to review verdict that revived UML, Maoist Center</h5>
                   <h6 class="card-subtitle mb-2 text-black">Politics</h6>
@@ -215,6 +186,7 @@
               <button type="button" class="btn btn-danger mt-2 px-5">Delete</button>        
           </div>
             </div>
+            
           </div>
         </div>
   </body>
