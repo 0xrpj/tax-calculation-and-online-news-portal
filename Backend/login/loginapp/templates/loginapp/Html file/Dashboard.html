@@ -214,9 +214,9 @@
           <div class="col-sm mt-5">
             <div class="card" style="width: 18rem; background-color: #b4b8ab">
               {% if post.header_image %}
-              <img src="{{ post.header_image.url }}" class="card-img-top" alt="...">
+              <img src="{{ post.header_image.url }}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="...">
               {% else %}
-              <img src="{% static 'Images/icon-image.png' %}" class="card-img-top" alt="...">
+              <img src="{% static 'Images/icon-image.png' %}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="...">
               {% endif %}
   
               <div class="card-body">
