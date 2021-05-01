@@ -51,7 +51,7 @@
                 </div>
               </div>
             </nav>
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
               {% csrf_token %}
             <div class="modal-dialog">      
                 <!-- Modal content-->
@@ -71,9 +71,7 @@
                     <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label"
                         >Image</label>
-                        <div
-                      id="exampleFormControlInput1"
-                        >{{form.header_image}}</div>
+                        <div id="exampleFormControlInput1">{{form.header_image}}</div>
                         </div>
                      <div class="mb-3">
                       <label for="exampleFormControlInput1" class="form-label">Author</label>
