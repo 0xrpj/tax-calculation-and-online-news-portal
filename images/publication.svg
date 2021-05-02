@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1939.459 996.772 70 53.019">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #ffcb0a;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="editions" transform="translate(1636.078 46)">
+    <g id="Group_9" data-name="Group 9" transform="translate(303.381 950.772)">
+      <g id="Rectangle_11" data-name="Rectangle 11" class="cls-1" transform="translate(0 41.306) rotate(-90)">
+        <rect class="cls-3" width="41.306" height="61.133" rx="4"/>
+        <rect class="cls-4" x="1" y="1" width="39.306" height="59.133" rx="3"/>
+      </g>
+      <rect id="Rectangle_12" data-name="Rectangle 12" class="cls-2" width="8.261" height="61.133" rx="4" transform="translate(0 51.514) rotate(-90)"/>
+    </g>
+    <g id="Group_8" data-name="Group 8" transform="translate(347.958 966.165)">
+      <g id="Rectangle_10" data-name="Rectangle 10" class="cls-1">
+        <rect class="cls-3" width="25.422" height="37.625" rx="4"/>
+        <rect class="cls-4" x="1" y="1" width="23.422" height="35.625" rx="3"/>
+      </g>
+      <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-2" cx="2.034" cy="2.034" r="2.034" transform="translate(11.186 29.49)"/>
+    </g>
+  </g>
+</svg>
