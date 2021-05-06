@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 # importimg created views
-from .views import HomeView, PoliticsView, EntertainmentView, SportsView, BusinessView, Detail_Article_View, AddPostView, UpdatePostView, DeletePostView
+from .views import HomeView, PoliticsView, EntertainmentView, SportsView, BusinessView, AboutView, Detail_Article_View, AddPostView, UpdatePostView, DeletePostView
 
 # url for browser to shows views with its access name for views
 urlpatterns = [
@@ -14,10 +14,16 @@ urlpatterns = [
     path('entertainment/', EntertainmentView.as_view(), name="entertainment"),
     path('sports/', SportsView.as_view(), name="sports"),
     path('business/', BusinessView.as_view(), name="business"),
+    path('about/', views.AboutView, name="about"),
 
     # path('blog/', Blog.as_view(), name="Blog"),
     path('article/<int:pk>', Detail_Article_View.as_view(), name="article-detail"),
-    path('article/<int:pk>/update/',UpdatePostView.as_view(), name="update_post"),
-    path('article/<int:pk>/delete/',DeletePostView.as_view(), name="delete_post"),
-    path('dashboard/', AddPostView.as_view(), name='dashboard')
+    path('article/<int:pk>/update/', UpdatePostView.as_view(), name="update_post"),
+    path('article/<int:pk>/delete/', DeletePostView.as_view(), name="delete_post"),
+    path('dashboard/', AddPostView.as_view(), name='dashboard'),
+
+    # tax calculation
+    path('tax/', views.Tax_calculator, name="Tax_calculator"),
+    path('history/', views.Tax_History, name="Tax_History")
+
 ]
