@@ -75,13 +75,21 @@
                   NEWS
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#"> POLITICS </a>
+                  <a class="dropdown-item" href="{% url 'politics' %}">
+                    POLITICS
+                  </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#"> ENTERTAINMENT </a>
+                  <a class="dropdown-item" href="{% url 'entertainment' %}">
+                    ENTERTAINMENT
+                  </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#"> BUSINESS </a>
+                  <a class="dropdown-item" href="{% url 'business' %}">
+                    BUSINESS
+                  </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#"> SPORTS </a>
+                  <a class="dropdown-item" href="{% url 'sports' %}">
+                    SPORTS
+                  </a>
                 </div>
               </li>
               <li class="nav-item">
@@ -150,9 +158,13 @@
         <div class="row">
           {% for post in object_list %} {% if post.category == 'Politics' %}
           <div class="col-lg-3">
-            <div class="businessNews card" style="width: 18rem;" >
+            <div class="businessNews card" style="width: 18rem">
               {% if post.header_image %}
-              <img src="{{ post.header_image.url }}" class="businessImg"  style="object-fit: cover;"/>
+              <img
+                src="{{ post.header_image.url }}"
+                class="businessImg"
+                style="object-fit: cover"
+              />
               {% else %}
               <img
                 src="{% static 'Images/icon-image.png' %}"
@@ -162,7 +174,11 @@
               {% endif %}
 
               <!-- <img src="images/pathao.jpg" class="businessImg" /> -->
-              <h4 class="businessHeading"><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h4>
+              <h4 class="businessHeading">
+                <a href="{% url 'article-detail' post.pk %}"
+                  >{{ post.title }}</a
+                >
+              </h4>
               <p class="businessTopic">{{ post.body }}</p>
             </div>
           </div>
@@ -174,9 +190,13 @@
         <div class="row">
           {% for post in object_list %} {% if post.category == 'Business' %}
           <div class="col-lg-3">
-            <div class="businessNews card" style="width: 18rem;">
+            <div class="businessNews card" style="width: 18rem">
               {% if post.header_image %}
-              <img src="{{ post.header_image.url }}" class="businessImg" style="object-fit: cover;"/>
+              <img
+                src="{{ post.header_image.url }}"
+                class="businessImg"
+                style="object-fit: cover"
+              />
               {% else %}
               <img
                 src="{% static 'Images/icon-image.png' %}"
@@ -186,7 +206,11 @@
               {% endif %}
 
               <!-- <img src="images/pathao.jpg" class="businessImg" /> -->
-              <h4 class="businessHeading"><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h4>
+              <h4 class="businessHeading">
+                <a href="{% url 'article-detail' post.pk %}"
+                  >{{ post.title }}</a
+                >
+              </h4>
               <p class="businessTopic">{{ post.body }}</p>
             </div>
           </div>
@@ -196,11 +220,15 @@
       <div>
         <h4 class="category">Entertainment</h4>
         <div class="row">
-          {% for post in object_list %} {% if post.category == 'Entertainment' %}
+          {% for post in object_list %} {% if post.category == 'Entertainment'%}
           <div class="col-lg-3">
-            <div class="businessNews card" style="width: 18rem;">
+            <div class="businessNews card" style="width: 18rem">
               {% if post.header_image %}
-              <img src="{{ post.header_image.url }}" class="businessImg" style="object-fit: cover;" />
+              <img
+                src="{{ post.header_image.url }}"
+                class="businessImg"
+                style="object-fit: cover"
+              />
               {% else %}
               <img
                 src="{% static 'Images/icon-image.png' %}"
@@ -210,7 +238,11 @@
               {% endif %}
 
               <!-- <img src="images/pathao.jpg" class="businessImg" /> -->
-              <h4 class="businessHeading"><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h4>
+              <h4 class="businessHeading">
+                <a href="{% url 'article-detail' post.pk %}"
+                  >{{ post.title }}</a
+                >
+              </h4>
               <p class="businessTopic">{{ post.body }}</p>
             </div>
           </div>
@@ -222,9 +254,13 @@
         <div class="row">
           {% for post in object_list %} {% if post.category == 'Sports' %}
           <div class="col-lg-3">
-            <div class="businessNews card"  style="width: 18rem;">
+            <div class="businessNews card" style="width: 18rem">
               {% if post.header_image %}
-              <img src="{{ post.header_image.url }}" class="businessImg" style="object-fit: cover;" />
+              <img
+                src="{{ post.header_image.url }}"
+                class="businessImg"
+                style="object-fit: cover"
+              />
               {% else %}
               <img
                 src="{% static 'Images/icon-image.png' %}"
@@ -233,7 +269,11 @@
               />
               {% endif %}
               <!-- <img src="images/stadium.jpg" class="businessImg" /> -->
-              <h4 class="businessHeading"><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h4>
+              <h4 class="businessHeading">
+                <a href="{% url 'article-detail' post.pk %}"
+                  >{{ post.title }}</a
+                >
+              </h4>
               <p class="businessTopic">{{ post.body }}</p>
             </div>
           </div>

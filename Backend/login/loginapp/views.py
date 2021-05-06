@@ -88,6 +88,26 @@ class HomeView(LoginRequiredMixin, ListView):
     model= Post
     # location to make post model visible    
     template_name = 'loginapp/Html file/index.html'
+
+class PoliticsView(LoginRequiredMixin, ListView):
+    model= Post
+    # location to make post model visible    
+    template_name = 'loginapp/Html file/Politics.html'
+
+class EntertainmentView(LoginRequiredMixin, ListView):
+    model= Post
+    # location to make post model visible    
+    template_name = 'loginapp/Html file/Entertainment.html'
+
+class SportsView(LoginRequiredMixin, ListView):
+    model= Post
+    # location to make post model visible    
+    template_name = 'loginapp/Html file/Sports.html'
+
+class BusinessView(LoginRequiredMixin, ListView):
+    model= Post
+    # location to make post model visible    
+    template_name = 'loginapp/Html file/Business.html'
     
 
 # For dashboard page

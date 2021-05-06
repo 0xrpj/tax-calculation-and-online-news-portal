@@ -1,0 +1,47 @@
+
+.navigation{
+	background-color: #090162;
+}
+.navbar-logo{
+    margin-left: 4px;
+    cursor: pointer;
+    width: 60px;
+    margin-top: 0rem;
+}
+.nav-link{
+	font-family: Poppins;
+	margin: 10px;
+	font-size: 16px;
+}
+
+.reset-button{
+    align-items: left;
+}
+
+.calculate-button{
+   float: right;
+}
+
+.inputtext{
+    font-family: Roboto;
+    font-weight: 600px;
+    font-size: 15px;
+}
+
+
+/*footer css of index.html*/
+.footer{
+	background-color: #090162; 
+	color: white;
+}
+
+.footer-content{
+	margin-top: 20px;
+}
+
+.icons{
+	background-color: ghostwhite;
+	border: 1px solid white;
+	border-radius: 50%;
+	font-size: 15px !important;
+}

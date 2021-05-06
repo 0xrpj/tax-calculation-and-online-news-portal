@@ -1,0 +1,69 @@
+.navigation{
+	background-color: #090162;
+}
+.navbar-logo{
+    margin-left: 4px;
+    cursor: pointer;
+    width: 60px;
+    margin-top: 0rem;
+}
+.nav-link{
+	font-family: Poppins;
+	margin: 10px;
+	font-size: 16px;
+}
+
+.bg-image{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../images/office.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    width: 100%;
+    height: 400px;
+    
+}
+
+.overlay{
+    height: 100%;
+    background: #06007c42;
+}
+
+.topic{
+    padding-top: 180px;
+    color: white;
+    font-size: 40px;
+    font-family: Poppins;
+}
+
+.title{
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.viewed_news{
+    background-color: skyblue;
+    color: blue;
+    margin-top: 30px;
+}
+
+.news_image{
+    width: 100%;
+}
+
+/*footer css of index.html*/
+.footer{
+	background-color: #090162; 
+	color: white;
+}
+
+.footer-content{
+	margin-top: 20px;
+}
+
+.icons{
+	background-color: ghostwhite;
+	border: 1px solid white;
+	border-radius: 50%;
+	font-size: 15px !important;
+}
