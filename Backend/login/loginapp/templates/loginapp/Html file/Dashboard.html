@@ -154,6 +154,7 @@
                       id="exampleFormControlInput1"
                       >{{form.auth}}</div>
                     </div>
+                    <div class="mb-3">
                     <label for="sel1">Category:</label>
                     <!-- <select class="form-control" id="sel1">
                       <option>Politics</option>
@@ -162,6 +163,7 @@
                       <option>Entertainment</option>
                     </select> -->
                     {{form.category}}
+                  </div>
                     <div class="mb-3">
                       <label
                         for="exampleFormControlTextarea1"
@@ -194,10 +196,12 @@
                       Close
                     </button>
                   </div>
+                  </div>
+                  </div>
                   </form>
                 </div>
-              </div>
-            </div>
+              <!-- </div>
+            </div> -->
             <!--logout -->
             <i
               class="fa fa-user-circle"
@@ -239,7 +243,6 @@
           {% endfor %}
         </div>
       </div>
-    </div>
   </body>
   <script>
     $(function () {

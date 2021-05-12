@@ -80,15 +80,16 @@
                       id="exampleFormControlInput1"
                       >{{form.auth}}</div>
                   </div>    
+                    <div class="mb-3">
+                      <label for="sel1">Category:</label>
+                      <!-- <select class="form-control" id="sel1">
+                        <option>Politics</option>
+                        <option>Sports</option>
+                        <option>Business</option>
+                        <option>Entertainment</option>
+                      </select> -->
+                      {{form.category}}
                     </div>
-                    <label for="sel1">Category:</label>
-                    <!-- <select class="form-control" id="sel1">
-                      <option>Politics</option>
-                      <option>Sports</option>
-                      <option>Business</option>
-                      <option>Entertainment</option>
-                    </select> -->
-                    {{form.category}}
                     <div class="mb-3">
                       <label for="exampleFormControlTextarea1" class="form-label">Body</label>
                       <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
@@ -105,6 +106,7 @@
                   </button>
 
                     <a href="{% url 'dashboard' %}" class="btn btn-info">Cancel</a>
+                  </div>
                   </div>
               </form>
                 

@@ -153,128 +153,132 @@
         </div>
       </div>
       <img src="{% static 'Images/pajero.gif' %}" class="advertisement" />
-      <div>
+      <div class="container">
         <h4 class="category">Politics</h4>
         <div class="row">
           {% for post in object_list %} {% if post.category == 'Politics' %}
           <div class="col-lg-3">
-            <div class="businessNews card" style="width: 18rem">
+            <div class="businessNews card mt-3"  style="width: 17rem; height: auto;">
               {% if post.header_image %}
               <img
                 src="{{ post.header_image.url }}"
                 class="businessImg"
-                style="object-fit: cover"
+                style="height: 250px; object-fit: cover; width: 100%;"
               />
               {% else %}
               <img
                 src="{% static 'Images/icon-image.png' %}"
                 class="card-img-top"
                 alt="..."
+                style="height: 250px; object-fit: cover; width: 100%;"
               />
               {% endif %}
 
               <!-- <img src="images/pathao.jpg" class="businessImg" /> -->
-              <h4 class="businessHeading">
+              <h4 class="businessHeading ml-2">
                 <a href="{% url 'article-detail' post.pk %}"
                   >{{ post.title }}</a
                 >
               </h4>
-              <p class="businessTopic">{{ post.body }}</p>
+              <p class="businessTopic ml-2">{{ post.body }}</p>
             </div>
           </div>
           {% endif%} {% endfor %}
         </div>
-      </div>
-      <div>
+        </div>
+      <div class="container">
         <h4 class="category">Business</h4>
         <div class="row">
           {% for post in object_list %} {% if post.category == 'Business' %}
           <div class="col-lg-3">
-            <div class="businessNews card" style="width: 18rem">
+            <div class="businessNews card"  style="width: 17rem; height: auto;">
               {% if post.header_image %}
               <img
                 src="{{ post.header_image.url }}"
                 class="businessImg"
-                style="object-fit: cover"
+                style="height: 250px; object-fit: cover; width: 100%;"
               />
               {% else %}
               <img
                 src="{% static 'Images/icon-image.png' %}"
                 class="card-img-top"
                 alt="..."
+                style="height: 250px; object-fit: cover; width: 100%;"
               />
               {% endif %}
 
               <!-- <img src="images/pathao.jpg" class="businessImg" /> -->
-              <h4 class="businessHeading">
+              <h4 class="businessHeading ml-2">
                 <a href="{% url 'article-detail' post.pk %}"
                   >{{ post.title }}</a
                 >
               </h4>
-              <p class="businessTopic">{{ post.body }}</p>
+              <p class="businessTopic ml-2">{{ post.body }}</p>
             </div>
           </div>
           {% endif%} {% endfor %}
         </div>
       </div>
-      <div>
+      <div class="container">
         <h4 class="category">Entertainment</h4>
         <div class="row">
           {% for post in object_list %} {% if post.category == 'Entertainment'%}
           <div class="col-lg-3">
-            <div class="businessNews card" style="width: 18rem">
+            <div class="businessNews card"  style="width: 17rem; height: auto;">
               {% if post.header_image %}
               <img
                 src="{{ post.header_image.url }}"
                 class="businessImg"
-                style="object-fit: cover"
+                style="height: 250px; object-fit: cover; width: 100%;"
               />
               {% else %}
               <img
                 src="{% static 'Images/icon-image.png' %}"
                 class="card-img-top"
                 alt="..."
+                style="height: 250px; object-fit: cover; width: 100%;"
               />
               {% endif %}
 
               <!-- <img src="images/pathao.jpg" class="businessImg" /> -->
-              <h4 class="businessHeading">
+              <h4 class="businessHeading ml-2">
                 <a href="{% url 'article-detail' post.pk %}"
                   >{{ post.title }}</a
                 >
               </h4>
-              <p class="businessTopic">{{ post.body }}</p>
+              <p class="businessTopic ml-2">{{ post.body }}</p>
             </div>
           </div>
           {% endif%} {% endfor %}
         </div>
       </div>
-      <div>
+      <div class="container">
         <h4 class="category">Sports</h4>
         <div class="row">
           {% for post in object_list %} {% if post.category == 'Sports' %}
           <div class="col-lg-3">
-            <div class="businessNews card" style="width: 18rem">
+            <div class="businessNews card"  style="width: 17rem; height: auto;">
               {% if post.header_image %}
               <img
                 src="{{ post.header_image.url }}"
                 class="businessImg"
-                style="object-fit: cover"
+                style="height: 250px; object-fit: cover; width: 100%;"
               />
               {% else %}
               <img
                 src="{% static 'Images/icon-image.png' %}"
                 class="card-img-top"
                 alt="..."
+                style="height: 250px; object-fit: cover; width: 100%;"
               />
               {% endif %}
               <!-- <img src="images/stadium.jpg" class="businessImg" /> -->
-              <h4 class="businessHeading">
+              <h4 class="businessHeading ml-2">
                 <a href="{% url 'article-detail' post.pk %}"
                   >{{ post.title }}</a
                 >
               </h4>
-              <p class="businessTopic">{{ post.body }}</p>
+              <p class="businessTopic ml-2">{{ post.body }}</p>
             </div>
           </div>
           {% endif%} {% endfor %}
@@ -282,7 +286,7 @@
       </div>
 
       <!--Footer-->
-      <div class="row footer" style="margin-top: 25px">
+      <div class="row footer" style="margin-top: 25px; background-color: #090162; color: white;">
         <div class="col-lg-4 footer-content">
           <img src="{% static 'Images/logo1.png' %}" class="navbar-logo" />
           <p>The english edition Online News</p>
@@ -306,6 +310,7 @@
             <i class="fa fa-twitter-square"></i>
           </div>
         </div>
+        <hr class="mb-3" style="background-color: white; border: 1px solid white; width: 100%; margin-left: 0; margin-right: 0;">
         <div style="background-color: #090162; color: white; width: 100%">
           <p style="text-align: center">
             Copyright &copy; 2021 Tax Management System, All rights reserved
