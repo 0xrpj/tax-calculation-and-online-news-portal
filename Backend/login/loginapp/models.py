@@ -32,17 +32,24 @@ class Post(models.Model):
 
 
 class Tax(models.Model):
-    monthly_salary = models.IntegerField(null=True)
+    monthly_salary = models.FloatField(null=True)
     no_months = models.IntegerField(null=True)
-    bonus = models.IntegerField(null=True)
-    allowance = models.IntegerField(null=True)
-    emp_provident = models.IntegerField(null=True)
-    CIT = models.IntegerField(null=True)
-    insurance = models.IntegerField(null=True)
+    bonus = models.FloatField(null=True)
+    allowance = models.FloatField(null=True)
+    emp_provident = models.FloatField(null=True)
+    CIT = models.FloatField(null=True)
+    insurance = models.FloatField(null=True)
+
+
+class TaxOne(models.Model):
+    annual_gross_salary = models.FloatField(null=True)
+    tax_slab_percentage = models.CharField(null=True, max_length=5)
+    taxable_income = models.FloatField(null=True)
+    net_payable_tax = models.FloatField(null=True)
 
 
 class History(models.Model):
     taxable_income = models.IntegerField(null=True)
     annual_gross_salary = models.IntegerField(null=True)
-    tax_slab_percentages = models.IntegerField(null=True)
+    tax_slab_percentages = models.CharField(null=True, max_length=5)
     net_payable_tax = models.IntegerField(null=True)

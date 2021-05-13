@@ -16,12 +16,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Tax',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('annual_gross_salary', models.IntegerField()),
-                ('tax_slab_percentage', models.IntegerField()),
-                ('taxable_income', models.IntegerField()),
-                ('net_payable_tax', models.IntegerField()),
-                ('auth', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('id', models.AutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
+                ('annual_gross_salary', models.FloatField()),
+                ('tax_slab_percentage', models.FloatField()),
+                ('taxable_income', models.FloatField()),
+                ('net_payable_tax', models.FloatField()),
+                ('auth', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

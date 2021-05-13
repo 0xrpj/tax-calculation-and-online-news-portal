@@ -1,3 +1,4 @@
+from django.db.models import fields
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -6,7 +7,7 @@ from django.urls import reverse, reverse_lazy
 
 
 from django.contrib.auth import authenticate, login, logout
-from .models import History, Post, Tax
+from .models import History, Post, Tax, TaxOne
 from .forms import CreateUserForm, PostForm, EditForm, TaxCalculation
 
 from django.contrib.auth.decorators import login_required
@@ -88,7 +89,6 @@ class Detail_Article_View(DetailView):
 
 # For detail home page
 
-
 class HomeView(LoginRequiredMixin, ListView):
     model = Post
     # location to make post model visible
@@ -168,9 +168,10 @@ def Tax_calculator(request):
         emp_provident = request.POST['emp_provident']
         CIT = request.POST['CIT']
         insurance = request.POST['insurance']
-        annual_gross_salary = int(monthly_salary)*int(no_months)
-        taxable_income = int(annual_gross_salary) + int(bonus) + \
-            int(allowance) - int(emp_provident) - int(CIT) - int(insurance)
+        annual_gross_salary = float(monthly_salary)*float(no_months)
+        taxable_income = float(annual_gross_salary) + float(bonus) + \
+            float(allowance) - float(emp_provident) - \
+            float(CIT) - float(insurance)
         if(taxable_income <= 400000):
             tax_slab_percentage = '1%'
             net_payable_tax = taxable_income * 0.01
@@ -195,7 +196,17 @@ def Tax_calculator(request):
         else:
             tax_slab_percentage = 'weird error'
             net_payable_tax = 0
-        str(taxable_income).save()
+        # str(taxable_income).save()
+        print("Annual Gross Salary: " + str(annual_gross_salary))
+        print("Slab percentage: " + str(tax_slab_percentage))
+        print("Taxable income: " + str(taxable_income))
+        print("Net payable tax: " + str(net_payable_tax))
+
+        # db_name = Tax(monthly_salary=monthly_salary, no_months=no_months, bonus=bonus,
+        #               allowance=allowance, emp_provident=emp_provident, CIT=CIT, insurance=insurance)
+        db_name = TaxOne(annual_gross_salary=annual_gross_salary, tax_slab_percentage=tax_slab_percentage,
+                         taxable_income=taxable_income, net_payable_tax=net_payable_tax)
+        db_name.save()
         # annual_gross_salary = request.POST['annual_gross_salary']
         # tax_slab_percentage = request.POST['tax_slab_percentage']
         # net_payable_tax = request.POST['net_payable_tax']

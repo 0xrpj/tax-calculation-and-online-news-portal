@@ -142,13 +142,18 @@
 
                         <!-- This is for comments section -->
                         <div class="row">
+                             <input type="hidden" id="myVar" name="variable" value="{{ post.title }}">
                                 <div style="padding: 5%; width:100%" class="comment-section" id="disqus_thread"></div>
 
-                                <script>
+                                <script type="text/javascript">
+                                    var post_title = document.getElementById("myVar").value;
 
-                                    var disqus_config = function () {
-                                    this.page.url = 'http://localhost/';  // Replace PAGE_URL with your page's canonical URL variable
-                                    this.page.identifier = 'np03a190017'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                    var disqus_config = function () {                                
+                                    //this.page.url = 'http://localhost:8000/article/{{ article.url }}';  // Replace PAGE_URL with your page's canonical URL variable
+                                    this.page.url = '{{request.build_absolute_uri }}.html';  // Replace PAGE_URL with your page's canonical URL variable
+                                    console.log(this.page.url);
+                                    this.page.identifier =  '/{{ request.get_full_path }}/';
+                                    console.log(this.page.identifier);
                                     };
                                     
                                     (function() { // DON'T EDIT BELOW THIS LINE
