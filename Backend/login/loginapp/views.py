@@ -29,11 +29,32 @@ def registerPage(request):
         if request.method == 'POST':
             # sends post request to CreateUserForm
             form = CreateUserForm(request.POST)
+
+            def isNum(data):
+                try:
+                    # data == 'akash'
+                    int(data)
+                    return True
+                except ValueError:
+                    return False    
+
+
+            # def clean_username(self):
+            #     username_passed = self.cleaned_data.get('username')
+                
+
             if form.is_valid():
-                form.save()
+                username = form.cleaned_data.get('username')
+                if isNum(username):
+                    # try:    
+                    #     raise forms.ValidationError("Invalid username can't be only numbers.")
+                    # except:
+                    messages.info(request, 'Invalid username, can not be only numbers.')   
+                else:
+                    form.save()
                 # user = form.cleaned_data.get('username')
                 # messages.success(request, 'Account was created for '+user)
-                return redirect('login')
+                    return redirect('login')
 
         context = {'form': form}
         return render(request, 'loginapp/Html file/Register.html', context)

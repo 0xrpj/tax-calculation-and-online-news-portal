@@ -37,7 +37,7 @@
             <nav class="navbar navbar-expand-md navbar-dark navigation">
               <div class="container">
                 <div>
-                <a href="Home.html" class="navbar-brand text-warning font-weight-bold">  
+                <a href="{% url 'home' %}" class="navbar-brand text-warning font-weight-bold">  
                   <img class ="navbar-logo" src = "{% static 'Images/logo1.png' %}">
                 </a>
                 </div>
@@ -66,19 +66,21 @@
                       <!-- <input type="title" class="form-control" id="exampleFormControlInput1" placeholder="Title"> -->
                       <div
                       id="exampleFormControlInput1"
-                    >{{form.title}}</div>
+                    >{{form.title}}
+                  </div>
                     </div>
                     <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label"
                         >Image</label>
                         <div id="exampleFormControlInput1">{{form.header_image}}</div>
                         </div>
-                     <div class="mb-3">
-                      <label for="exampleFormControlInput1" class="form-label">Author</label>
+                     <div class="mb-3" style="display: inline-flex;">
+                      <label for="exampleFormControlInput1" class="form-label">Author:</label>
                       <!-- <input type="author" class="form-control" id="exampleFormControlInput1" placeholder="Author"> -->
                       <div
                       id="exampleFormControlInput1"
-                      >{{form.auth}}</div>
+                      style="padding-left: 10px;"
+                      >admin</div>
                   </div>    
                     <div class="mb-3">
                       <label for="sel1">Category:</label>
@@ -90,7 +92,7 @@
                       </select> -->
                       {{form.category}}
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-1">
                       <label for="exampleFormControlTextarea1" class="form-label">Body</label>
                       <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
                       <div
@@ -99,17 +101,16 @@
                     </div>
                     </div>
                   </div>
+                </div>
         
-                  <div class="modal-footer">       
+                  <div class="modal-footer text-center">       
                     <button  class="btn btn-success">
                   Edit
                   </button>
 
                     <a href="{% url 'dashboard' %}" class="btn btn-info">Cancel</a>
                   </div>
-                  </div>
               </form>
                 
-              </div>
     </body>
 </html>

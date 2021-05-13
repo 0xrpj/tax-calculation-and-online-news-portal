@@ -61,7 +61,7 @@
                 <a href="{% url 'home' %}" class="nav-link text-white">HOME</a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link text-white">ABOUT US</a>
+                <a href="{% url 'about' %}" class="nav-link text-white">ABOUT US</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -121,35 +121,89 @@
     <!-- page content-->
     <div class="container" style="background-color: white">
       <div class="row">
+        {% for post in object_list %} 
+          
+          {% if forloop.counter == 1  %}
         <div class="col-lg-8 md-8 sm-10">
           <div class="news-portal">
-            <a href="pages/Blog.html" style="text-decoration: none">
-              <img src="{% static 'Images/vaccine.jpg' %}" class="image" />
+            <a href="{% url 'article-detail' post.pk %}" style="text-decoration: none">
+              {% if post.header_image %}
+              <img
+                src="{{ post.header_image.url }}"
+                class="image"
+                
+              />
+              {% else %}
+              <img
+                src="{% static 'Images/icon-image.png' %}"
+                class="image"
+                alt="..."
+              />
+              {% endif %}
               <h3 class="title">
-                COVID 19 vaccination campaign postponed untill new batch of
-                vacciness arrive in Nepal
+                {{ post.title }}
               </h3>
             </a>
           </div>
         </div>
+        {% endif %} 
+        {% endfor %}
+
+        
         <div class="col-lg-4 md-8 sm-10">
+          {% for post in object_list %} 
+          {% if forloop.counter == 2  %}
           <div class="row">
             <div class="news-portal">
-              <img src="{% static 'Images/politics.jpg' %}" class="image1" />
+              {% if post.header_image %}
+              <img
+                src="{{ post.header_image.url }}"
+                class="image1"
+                
+              />
+              {% else %}
+              <img
+                src="{% static 'Images/icon-image.png' %}"
+                class="image1"
+                alt="..."
+              />
+              {% endif %}
+              <a href="{% url 'article-detail' post.pk %}">
               <h5 class="title">
-                With neither side ready to backdown , confrontation in UML
-                continues
+                {{ post.title }}
               </h5>
+              </a>
             </div>
           </div>
+          {% endif %} 
+          {% endfor %}
+
+          {% for post in object_list %} 
+          {% if forloop.counter == 3  %}
           <div class="row">
             <div class="news-portal">
-              <img src="{% static 'Images/sports.jpg' %}" class="image1" />
+              {% if post.header_image %}
+              <img
+                src="{{ post.header_image.url }}"
+                class="image1"
+                
+              />
+              {% else %}
+              <img
+                src="{% static 'Images/icon-image.png' %}"
+                class="image1"
+                alt="..."
+              />
+              {% endif %}
+              <a href="{% url 'article-detail' post.pk %}">
               <h5 class="title">
-                Chelesea progressed to champion league quater final
+                {{ post.title }}
               </h5>
+              </a>
             </div>
           </div>
+          {% endif %} 
+          {% endfor %}
         </div>
       </div>
       <img src="{% static 'Images/pajero.gif' %}" class="advertisement" />
@@ -157,6 +211,7 @@
         <h4 class="category">Politics</h4>
         <div class="row">
           {% for post in object_list %} {% if post.category == 'Politics' %}
+          {% if forloop.counter <= 8  %}
           <div class="col-lg-3">
             <div class="businessNews card mt-3"  style="width: 17rem; height: auto;">
               {% if post.header_image %}
@@ -180,16 +235,20 @@
                   >{{ post.title }}</a
                 >
               </h4>
-              <p class="businessTopic ml-2">{{ post.body }}</p>
+              <p class="businessTopic ml-2">{{ post.body|truncatewords:9 }}</p>
             </div>
           </div>
-          {% endif%} {% endfor %}
+          {% endif%}
+          {% endif%}
+          {% endfor %}
         </div>
+        <a href="{% url 'politics' %}">Load more</a>
         </div>
       <div class="container">
         <h4 class="category">Business</h4>
         <div class="row">
           {% for post in object_list %} {% if post.category == 'Business' %}
+          {% if forloop.counter <= 8  %}
           <div class="col-lg-3">
             <div class="businessNews card"  style="width: 17rem; height: auto;">
               {% if post.header_image %}
@@ -216,13 +275,17 @@
               <p class="businessTopic ml-2">{{ post.body }}</p>
             </div>
           </div>
-          {% endif%} {% endfor %}
+          {% endif%}
+          {% endif%}
+          {% endfor %}
         </div>
+        <a href="{% url 'business' %}">Load more</a>
       </div>
       <div class="container">
         <h4 class="category">Entertainment</h4>
         <div class="row">
           {% for post in object_list %} {% if post.category == 'Entertainment'%}
+          {% if forloop.counter <= 8  %}
           <div class="col-lg-3">
             <div class="businessNews card"  style="width: 17rem; height: auto;">
               {% if post.header_image %}
@@ -249,13 +312,17 @@
               <p class="businessTopic ml-2">{{ post.body }}</p>
             </div>
           </div>
-          {% endif%} {% endfor %}
+          {% endif%}
+          {% endif%}
+          {% endfor %}
         </div>
+        <a href="{% url 'entertainment' %}">Load more</a>
       </div>
       <div class="container">
         <h4 class="category">Sports</h4>
         <div class="row">
           {% for post in object_list %} {% if post.category == 'Sports' %}
+          {% if forloop.counter <= 8  %}
           <div class="col-lg-3">
             <div class="businessNews card"  style="width: 17rem; height: auto;">
               {% if post.header_image %}
@@ -281,8 +348,11 @@
               <p class="businessTopic ml-2">{{ post.body }}</p>
             </div>
           </div>
-          {% endif%} {% endfor %}
+          {% endif%}
+          {% endif%}
+          {% endfor %}
         </div>
+        <a href="{% url 'sports' %}">Load more</a>
       </div>
 
       <!--Footer-->
@@ -295,10 +365,10 @@
         </div>
         <div class="col-lg-4 footer-content">
           <h6>News</h6>
-          <p>Politics</p>
-          <p>Entertainment</p>
-          <p>Sports</p>
-          <p>Business</p>
+          <a href="{% url 'politics' %}"><p>Politics</p></a>
+          <a href="{% url 'entertainment' %}"><p>Entertainment</p></a>
+          <a href="{% url 'sports' %}"><p>Sports</p></a>
+          <a href="{% url 'business' %}"><p>Business</p></a>
         </div>
         <div class="col-lg-4 footer-content">
           <h6>You can also find us on</h6>

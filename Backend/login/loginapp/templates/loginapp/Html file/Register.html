@@ -63,6 +63,12 @@
               {% csrf_token %}
               <img class="avatar" src="{% static 'Images/Avatar.png' %}" />
               <h2>Welcome</h2>
+              {{form.errors}}
+              <br />
+              {% for message in messages %} {{message}} {% endfor %}
+              <br />
+              <br />
+
               <div class="input-div one focus">
                 <div class="i">
                   <i class="fas fa-user"></i>
@@ -104,7 +110,6 @@
               <a href="{% url 'login' %}" class="ml-2">Login</a>
             </form>
           </div>
-          {{form.errors}}
         </div>
       </div>
     </div>

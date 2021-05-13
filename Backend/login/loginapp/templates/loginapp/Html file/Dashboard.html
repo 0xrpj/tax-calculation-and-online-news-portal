@@ -140,9 +140,9 @@
                         >{{form.header_image}}
                         </div>
                         <br>
-                    <div class="mb-3">
+                    <div class="mb-3" style="display: inline-flex;">
                       <label for="exampleFormControlInput1" class="form-label"
-                        >Author</label
+                        >Author:</label
                       >
                       <!-- <input
                         type="author"
@@ -152,10 +152,11 @@
                       /> -->
                       <div
                       id="exampleFormControlInput1"
-                      >{{form.auth}}</div>
+                      style="padding-left: 10px;"
+                      >admin</div>
                     </div>
                     <div class="mb-3">
-                    <label for="sel1">Category:</label>
+                    <label for="sel1">Category</label>
                     <!-- <select class="form-control" id="sel1">
                       <option>Politics</option>
                       <option>Sports</option>
@@ -177,7 +178,7 @@
                       ></textarea> -->
                       <div
                       id="exampleFormControlTextarea1"
-                      rows="3"
+                      
                       >{{form.body}}</div>
                     </div>
                   </div>
@@ -225,11 +226,11 @@
   
               <div class="card-body">
                 <h5 class="card-title">
-                  {{ post.title }} - {{ post.auth.username }} - {{ post.auth.email }}
+                  {{ post.title }} - admin
                 </h5>
                 <h6 class="card-subtitle mb-2 text-black">{{ post.category}}</h6>
                 <p class="card-text">
-                  {{ post.body }}
+                  {{ post.body|truncatewords:8 }}
                 </p>
               </div>
             </div>

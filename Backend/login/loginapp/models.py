@@ -20,8 +20,9 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     header_image = models.ImageField(
         null=True, blank=True, upload_to="loginapp\static\Images")
-    auth = models.ForeignKey(User, on_delete=models.CASCADE)
-    body = RichTextField(blank=True, null=True)
+    # auth = models.ForeignKey(User, on_delete=models.CASCADE)
+    # body = RichTextField(blank=True, null=True)
+    body = models.CharField(max_length=1000, blank=False)
     category = models.CharField(max_length=255, default='Politics')
 
     def __str__(self):
