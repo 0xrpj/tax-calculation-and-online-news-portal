@@ -6,7 +6,7 @@ from django.urls import reverse, reverse_lazy
 
 
 from django.contrib.auth import authenticate, login, logout
-from .models import Post, Tax
+from .models import History, Post, Tax
 from .forms import CreateUserForm, PostForm, EditForm, TaxCalculation
 
 from django.contrib.auth.decorators import login_required
@@ -161,17 +161,50 @@ class DeletePostView(DeleteView, LoginRequiredMixin):
 
 def Tax_calculator(request):
     if request.method == 'POST':
-        Tax = Tax.objects.get()
-        Tax.blur_quantity = request.POST['annual_gross_salary']
-        Tax.save()
-    template_name = 'loginapp/Html file/taxCalculator'
-    success_url = reverse_lazy('home')
+        monthly_salary = request.POST['monthly_salary']
+        no_months = request.POST['no_months']
+        bonus = request.POST['bonus']
+        allowance = request.POST['allowance']
+        emp_provident = request.POST['emp_provident']
+        CIT = request.POST['CIT']
+        insurance = request.POST['insurance']
+        annual_gross_salary = int(monthly_salary)*int(no_months)
+        taxable_income = int(annual_gross_salary) + int(bonus) + \
+            int(allowance) - int(emp_provident) - int(CIT) - int(insurance)
+        if(taxable_income <= 400000):
+            tax_slab_percentage = '1%'
+            net_payable_tax = taxable_income * 0.01
+
+        elif(taxable_income > 400000) and (taxable_income <= 500000):
+            tax_slab_percentage = '10 %'
+            net_payable_tax = 0.01*400000 + 0.10 * (taxable_income-400000)
+
+        elif (taxable_income > 500000) and (taxable_income <= 700000):
+            tax_slab_percentage = '20 %'
+            net_payable_tax = 0.01*400000 + 0.10 * \
+                100000 + 0.20 * (taxable_income-500000)
+
+        elif(taxable_income > 700000 and taxable_income <= 2000000):
+            tax_slab_percentage = '30 %'
+            net_payable_tax = 0.01*400000 + 0.10 * 100000 + \
+                0.20 * 200000 + 0.30 * (taxable_income-700000)
+        elif(taxable_income > 2000000):
+            tax_slab_percentage = '36 %'
+            net_payable_tax = 0.01*400000 + 0.10 * 100000 + 0.20 * \
+                200000 + 0.30 * 1300000 + 0.36 * (taxable_income-2000000)
+        else:
+            tax_slab_percentage = 'weird error'
+            net_payable_tax = 0
+        str(taxable_income).save()
+        # annual_gross_salary = request.POST['annual_gross_salary']
+        # tax_slab_percentage = request.POST['tax_slab_percentage']
+        # net_payable_tax = request.POST['net_payable_tax']
     return render(request, 'loginapp/Html file/TaxCalculator.html')
 
 
 def Tax_History(request):
-    all_members = Tax.objects.all
-    return render(request, 'loginapp/Html file/TaxHistory.html', {'all':all_members })
+    all_members = History.objects.all
+    return render(request, 'loginapp/Html file/TaxHistory.html', {'all': all_members})
 
 
 def AboutView(request):

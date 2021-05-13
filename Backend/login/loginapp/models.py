@@ -1,3 +1,4 @@
+
 from django.db import models
 
 from django.contrib.auth.models import User
@@ -31,11 +32,17 @@ class Post(models.Model):
 
 
 class Tax(models.Model):
-    auth = models.ForeignKey(User, on_delete=models.CASCADE)
-    annual_gross_salary = models.IntegerField()
-    tax_slab_percentage = models.IntegerField()
-    taxable_income = models.IntegerField()
-    net_payable_tax = models.IntegerField()
+    monthly_salary = models.IntegerField(null=True)
+    no_months = models.IntegerField(null=True)
+    bonus = models.IntegerField(null=True)
+    allowance = models.IntegerField(null=True)
+    emp_provident = models.IntegerField(null=True)
+    CIT = models.IntegerField(null=True)
+    insurance = models.IntegerField(null=True)
 
-    def __str__(self):
-        return str(self.auth) 
+
+class History(models.Model):
+    taxable_income = models.IntegerField(null=True)
+    annual_gross_salary = models.IntegerField(null=True)
+    tax_slab_percentages = models.IntegerField(null=True)
+    net_payable_tax = models.IntegerField(null=True)

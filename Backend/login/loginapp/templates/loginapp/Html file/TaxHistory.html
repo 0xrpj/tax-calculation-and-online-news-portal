@@ -108,9 +108,9 @@
                     <tbody>
                       <tr>
                         {% for items in all %}
-                        <td>{{ items.annual_gross_salary }}</td>
-                        <td>{{ items.tax_slab_percentage}}</td>
-                        <td>{{ items.taxable_income }}</td>
+                        <td> {{taxable_income.as_p}}</td>
+                        <td>{{ items.annual_gross_salary}}</td>
+                        <td>{{ items.tax_slab_percentages }}</td>
                         <td>{{ items.net_payable_tax }}</td>
                       </tr>
                         {% endfor %}

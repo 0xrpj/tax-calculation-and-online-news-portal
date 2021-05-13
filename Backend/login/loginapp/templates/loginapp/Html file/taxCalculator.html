@@ -120,7 +120,8 @@
                     </div>
                 </div>
             </form>
-            <form name="myform" class="form-group" id="form">
+            <form name="myform" class="form-group" id="form" method="POST">
+                {% csrf_token %}
                 <div class="row jumbotron px-3 py-3 text-center">
                     <div class="col-lg-6">
                         <h5 style="text-align: left; font-family: Roboto; font-size: 22px;">Annual Income</h5>
@@ -130,33 +131,33 @@
                                 <label  class="inputtext" for="inputname">Monthly Salary</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="monthly_salary">
+                                <input type="text" class="form-control" id="monthly_salary" name="monthly_salary">
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label  class="inputtext" for="inputname">No. of months</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="no_months">
+                                <input type="text" class="form-control" id="no_months" name="no_months" >
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label  class="inputtext" for="inputname">Bonus</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="bonus">
+                                <input type="text" class="form-control" id="bonus" name="bonus">
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label  class="inputtext" for="inputname">Allowance</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="allowance">
+                                <input type="text" class="form-control" id="allowance" name="allowance">
                             </div>
-                            <!-- <hr class="mb-3" style="background-color: blue; border: 1px solid blue; width: 90%;">
+                            {% comment %} <!-- <hr class="mb-3" style="background-color: blue; border: 1px solid blue; width: 90%;">
                             <div class="col-md-6 mb-4">
                                 <label  class="inputtext" for="inputname">Total Salary</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="total-salary">
-                            </div> -->
+                                <input type="text" class="form-control" id="total_salary" name="total_salary">
+                            </div> --> {% endcomment %}
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -167,25 +168,25 @@
                                 <label  class="inputtext" for="inputname">Employee Provident Fund</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="emp-provident">
+                                <input type="text" class="form-control" id="emp_provident" name="emp_provident">
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label  class="inputtext" for="inputname">Citizen Investment Trust</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="CIT">
+                                <input type="text" class="form-control" id="CIT" name="CIT">
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label  class="inputtext" for="inputname">Insurance</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="insurance">
+                                <input type="text" class="form-control" id="insurance" name="insurance">
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
-            <!-- <form name="myform" class="form-group" id="form">
+
+            {% comment %} /*form name="myform" class="form-group" id="form">
                 <div class="row jumbotron px-3 py-3 text-center">
                     <div class="col-md-3 mb-4">
                         <label  class="inputtext" for="inputname">Annual medical expense</label>
@@ -200,11 +201,12 @@
                         <input type="text" class="form-control" id="insurance">              
                     </div>
                 </div>
-            </form> -->
+            </form> */ {% endcomment %}
             <button type="button" class="btn btn-primary reset-button" >Reset values</button>
-            <button type="button" class="btn btn-success calculate-button" data-toggle="modal" data-target="#myModal" onclick="TaxCalculator();">Calculate</button>
+            <button type="submit" class="btn btn-success calculate-button" data-toggle="modal" data-target="#myModal" onclick="TaxCalculator();">Calculate</button>
             <p class="mt-4"><span style="font-weight: bold;">Note:</span> This tool is made for general tax calculation only. Information from this tool should not be used for any other purpose.</p>
         </div>
+    </form>
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">      
               <!-- Modal content-->
