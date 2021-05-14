@@ -39,6 +39,14 @@
 	font-size: 15px !important;
 }
 
+@media (max-width: 768px){
+
+	.search{
+		display: none;
+	}
+
+}
+
 /* @media (max-width: 540px){
 	.photo{
         width: 100px;

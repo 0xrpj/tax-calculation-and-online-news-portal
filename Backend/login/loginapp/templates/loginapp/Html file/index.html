@@ -103,17 +103,19 @@
                 Logout
               </button>
             </a>
-            <form class="d-flex">
-              <input
-                class="form-control"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success btn-sm ml-2" type="submit">
-                Search
-              </button>
-            </form>
+            <div class="search">
+              <form class="d-flex">
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-success btn-sm ml-2" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </nav>
@@ -126,7 +128,6 @@
           {% if forloop.counter == 1  %}
         <div class="col-lg-8 md-8 sm-10">
           <div class="news-portal">
-            <a href="{% url 'article-detail' post.pk %}" style="text-decoration: none">
               {% if post.header_image %}
               <img
                 src="{{ post.header_image.url }}"
@@ -140,6 +141,7 @@
                 alt="..."
               />
               {% endif %}
+              <a href="{% url 'article-detail' post.pk %}" style="text-decoration: none">
               <h3 class="title">
                 {{ post.title }}
               </h3>
@@ -168,8 +170,8 @@
                 alt="..."
               />
               {% endif %}
-              <a href="{% url 'article-detail' post.pk %}">
-              <h5 class="title">
+              <a href="{% url 'article-detail' post.pk %}" style="text-decoration: none">
+              <h5 class="title" style="text-decoration: none">
                 {{ post.title }}
               </h5>
               </a>
@@ -195,7 +197,7 @@
                 alt="..."
               />
               {% endif %}
-              <a href="{% url 'article-detail' post.pk %}">
+              <a href="{% url 'article-detail' post.pk %}" style="text-decoration: none">
               <h5 class="title">
                 {{ post.title }}
               </h5>
@@ -213,7 +215,7 @@
           {% for post in object_list %} {% if post.category == 'Politics' %}
           {% if forloop.counter <= 8  %}
           <div class="col-lg-3">
-            <div class="businessNews card mt-3"  style="width: 17rem; height: auto;">
+            <div class="businessNews card mt-3">
               {% if post.header_image %}
               <img
                 src="{{ post.header_image.url }}"
@@ -232,6 +234,7 @@
               <!-- <img src="images/pathao.jpg" class="businessImg" /> -->
               <h4 class="businessHeading ml-2">
                 <a href="{% url 'article-detail' post.pk %}"
+                style="text-decoration: none"
                   >{{ post.title }}</a
                 >
               </h4>
@@ -250,7 +253,7 @@
           {% for post in object_list %} {% if post.category == 'Business' %}
           {% if forloop.counter <= 8  %}
           <div class="col-lg-3">
-            <div class="businessNews card"  style="width: 17rem; height: auto;">
+            <div class="businessNews card mt-3" >
               {% if post.header_image %}
               <img
                 src="{{ post.header_image.url }}"
@@ -269,6 +272,7 @@
               <!-- <img src="images/pathao.jpg" class="businessImg" /> -->
               <h4 class="businessHeading ml-2">
                 <a href="{% url 'article-detail' post.pk %}"
+                style="text-decoration: none"
                   >{{ post.title }}</a
                 >
               </h4>
@@ -286,8 +290,8 @@
         <div class="row">
           {% for post in object_list %} {% if post.category == 'Entertainment'%}
           {% if forloop.counter <= 8  %}
-          <div class="col-lg-3">
-            <div class="businessNews card"  style="width: 17rem; height: auto;">
+          <div class="col-lg-3 mt-3">
+            <div class="businessNews card">
               {% if post.header_image %}
               <img
                 src="{{ post.header_image.url }}"
@@ -306,6 +310,7 @@
               <!-- <img src="images/pathao.jpg" class="businessImg" /> -->
               <h4 class="businessHeading ml-2">
                 <a href="{% url 'article-detail' post.pk %}"
+                style="text-decoration: none"
                   >{{ post.title }}</a
                 >
               </h4>
@@ -324,7 +329,7 @@
           {% for post in object_list %} {% if post.category == 'Sports' %}
           {% if forloop.counter <= 8  %}
           <div class="col-lg-3">
-            <div class="businessNews card"  style="width: 17rem; height: auto;">
+            <div class="businessNews card mt-3">
               {% if post.header_image %}
               <img
                 src="{{ post.header_image.url }}"
@@ -342,6 +347,7 @@
               <!-- <img src="images/stadium.jpg" class="businessImg" /> -->
               <h4 class="businessHeading ml-2">
                 <a href="{% url 'article-detail' post.pk %}"
+                style="text-decoration: none"
                   >{{ post.title }}</a
                 >
               </h4>
@@ -363,21 +369,26 @@
           <p>Phone No: 9856234124,014256352</p>
           <p>taxcompany@gmail.com</p>
         </div>
-        <div class="col-lg-4 footer-content">
+        <div class="col-lg-4 footer-content" >
           <h6>News</h6>
-          <a href="{% url 'politics' %}"><p>Politics</p></a>
-          <a href="{% url 'entertainment' %}"><p>Entertainment</p></a>
-          <a href="{% url 'sports' %}"><p>Sports</p></a>
-          <a href="{% url 'business' %}"><p>Business</p></a>
+          <a href="{% url 'politics' %}" style="color: white; text-decoration: none;"><p>Politics</p></a>
+          <a href="{% url 'entertainment' %}" style="color: white; text-decoration: none;"><p>Entertainment</p></a>
+          <a href="{% url 'sports' %}" style="color: white; text-decoration: none;"><p>Sports</p></a>
+          <a href="{% url 'business' %}" style="color: white; text-decoration: none;"><p>Business</p></a>
         </div>
         <div class="col-lg-4 footer-content">
           <h6>You can also find us on</h6>
           <div style="font-size: 35px; margin-left: 10px">
-            <i class="fa fa-facebook-official"></i>
+            <a href = "https://www.facebook.com/News24nepal.tv" target="_blank">
+              <i class="fa fa-facebook-official" style="color: blue;"></i>
+            </a>
             &nbsp;&nbsp;
-            <i class="fa fa-instagram"></i>
+            <a href="https://www.instagram.com/ekantipur_news/" target="_blank">
+            <i class="fa fa-instagram" style="color:#F56040;;"></i>
+            </a>
             &nbsp;&nbsp;
-            <i class="fa fa-twitter-square"></i>
+            <a href="twitter.com/rsnpj">
+            <i class="fa fa-twitter-square"  style="color: #405DE6;" target="_blank"></i></a>
           </div>
         </div>
         <hr class="mb-3" style="background-color: white; border: 1px solid white; width: 100%; margin-left: 0; margin-right: 0;">

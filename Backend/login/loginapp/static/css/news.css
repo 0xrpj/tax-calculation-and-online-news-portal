@@ -67,3 +67,10 @@
 	border-radius: 50%;
 	font-size: 15px !important;
 }
+@media (max-width: 768px){
+
+	.search{
+		display: none;
+	}
+
+}

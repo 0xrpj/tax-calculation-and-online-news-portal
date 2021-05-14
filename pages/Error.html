@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tax Management System</title>
+        <!-- Latest compiled and minified CSS -->
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+    
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+          rel="stylesheet"
+        />
+        <style>
+            .bg-img{
+                background-image: url('../images/error2.gif');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                width: 100%;
+                height: 120vh;
+                position: relative;
+                object-fit: cover;
+                margin-bottom: -23px;
+                /* display: block;
+                margin-left: auto;
+                margin-right: auto; */
+                /* object-fit: cover; */
+            }
+            .navigation{
+	            background-color: #090162;
+            }
+            .navbar-logo{
+                margin-left: 4px;
+                cursor: pointer;
+                width: 60px;
+                margin-top: 0rem;
+            }
+            .nav-link{
+                font-family: Poppins;
+                margin: 10px;
+                font-size: 16px;
+            }
+
+            .button{
+                /* display: block;
+                margin-left: auto;
+                margin-right: auto; */
+                position: absolute;
+                top: 40%;
+                left: 43%;
+            }
+            /*footer css of index.html*/
+            .footer{
+                background-color: #090162; 
+                color: white;
+            }
+
+            .footer-content{
+                margin-top: 20px;
+            }   
+            @media (max-width: 768px){
+                .bg-img{
+                background-image: url('../images/error2.gif');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center center;
+                width: 100%;
+                height: 100vh;
+                position: relative;
+                object-fit: cover;
+                margin-bottom: -23px;
+            }
+            .search{
+                display: none;
+            }
+            .button{
+                /* display: block;
+                margin-left: auto;
+                margin-right: auto; */
+                position: absolute;
+                top: 20%;
+                left: 43%;
+            }
+            }   
+            @media (max-width: 375px){
+                .bg-img{
+                background-image: url('../images/error2.gif');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                width: 100%;
+                height: 100vh;
+                position: relative;
+                object-fit: cover;
+                margin-bottom: -23px;
+                /* display: block;
+                margin-left: auto;
+                margin-right: auto; */
+                /* object-fit: cover; */
+            }
+            .button{
+                /* display: block;
+                margin-left: auto;
+                margin-right: auto; */
+                position: absolute;
+                top: 30%;
+                right: 20%;
+            }
+            }       
+            @media (max-width: 375px){
+                .bg-img{
+                background-image: url('../images/error2.gif');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                width: 100%;
+                height: 100vh;
+                position: relative;
+                object-fit: cover;
+                margin-bottom: -23px;
+                /* display: block;
+                margin-left: auto;
+                margin-right: auto; */
+                /* object-fit: cover; */
+            }
+            .button{
+                /* display: block;
+                margin-left: auto;
+                margin-right: auto; */
+                position: absolute;
+                top: 30%;
+                left: 18%;
+            }
+            }          
+        </style>
+    </head>
+    <body>
+        <!--navigation bar-->
+        <div class="header">
+            <nav class="navbar navbar-expand-md navbar-dark navigation">
+                <div class="container">
+                    <a href="../index.html" class="navbar-brand text-warning font-weight-bold"> 	
+                        <img class ="navbar-logo" src = "../images/logo1.png">
+                    </a>
+    
+                    <button class ="navbar-toggler type="button" data-toggle="collapse" data-target="#collapsenavbar">
+                        <span class="navbar-toggler-icon">	
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse text-center " id="collapsenavbar">
+                        <ul class="navbar-nav ml-auto mr-auto">
+                            <li class="nav-item"> 
+                                <a href="../index.html" class="nav-link text-white">HOME</a>
+                            </li>
+                            <li class="nav-item"> 
+                                <a href="./About.html" class="nav-link text-white">ABOUT US</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" style="color: white;">
+                                    NEWS
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="./News.html">
+                                        POLITICS
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        ENTERTAINMENT
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        BUSINESS
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        SPORTS
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item"> 
+                                <a href="taxCalculator.html" class="nav-link text-white">TAX CALCULATOR</a>
+                            </li>
+                        </ul>
+                        <a href="./SignIn.html" class="nav-link text-white">
+                            <button type="button" class="btn btn-primary btn-sm">Sign-in</button>
+                        </a>
+                        <div class="search">
+                         <form class="d-flex">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-success btn-sm ml-2" type="submit">Search</button>
+                          </form>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="bg-img">
+            <button class="btn btn-success button">Go back to Home Page</button>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row" style="margin-top: 25px">
+                <div class="col-lg-4 footer-content">
+                    <img src="../images/logo1.png" class="navbar-logo" />
+                    <p>The english edition Online News</p>
+                    <p>Phone No: 9856234124,014256352</p>
+                    <p>taxcompany@gmail.com</p>
+                </div>
+                <div class="col-lg-4 footer-content">
+                    <h6>News</h6>
+                    <p>Politics</p>
+                    <p>Entertainment</p>
+                    <p>Sports</p>
+                    <p>Business</p>
+                </div>
+                <div class="col-lg-4 footer-content">
+                    <h6>You can also find us on</h6>
+                    <div style="font-size: 35px; margin-left: 10px">
+                    <i class="fa fa-facebook-official"></i>
+                    &nbsp;&nbsp;
+                    <i class="fa fa-instagram"></i>
+                    &nbsp;&nbsp;
+                    <i class="fa fa-twitter-square"></i>
+                    </div>
+                </div>
+                <hr
+                    class="mb-3"
+                    style="
+                    background-color: white;
+                    border: 1px solid white;
+                    width: 100%;
+                    margin-left: 0;
+                    margin-right: 0;
+                    "
+                />
+                <div style="background-color: #090162; color: white; width: 100%">
+                    <p style="text-align: center">
+                    Copyright &copy; 2021 Tax Management System, All rights reserved
+                    </p>
+                </div>
+                </div>
+            </div>
+            </footer>
+    </body>
+    </html>

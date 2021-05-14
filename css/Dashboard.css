@@ -51,11 +51,11 @@ body{
 }
 
 .nav-link:hover{
-	background: #7579e7;
+	background: grey;
 }
 
 .text-primary{
-	color: #7579e7 !important;
+	color: grey !important;
 }
 
 .toggle{

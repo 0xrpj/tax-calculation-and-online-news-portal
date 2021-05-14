@@ -31,7 +31,14 @@
         />
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            @media (max-width: 768px){
+            .search{
+                display: none;
+            }
 
+            }
+        </style>
     </head>
         <body>
             <!--navigation bar-->
@@ -101,23 +108,29 @@
                           Logout
                         </button>
                       </a>
-                      <form class="d-flex">
-                        <input
-                          class="form-control"
-                          type="search"
-                          placeholder="Search"
-                          aria-label="Search"
-                        />
-                        <button class="btn btn-outline-success btn-sm ml-2" type="submit">
-                          Search
-                        </button>
-                      </form>
+                      <div class="search">
+                        <form class="d-flex">
+                          <input
+                            class="form-control"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                          />
+                          <button class="btn btn-success btn-sm ml-2" type="submit">
+                            Search
+                          </button>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </nav>
               </div>
-                <h3 class="text-center mt-4 mb-4">SALARY TAX CALCULATOR</h3>
+            
                 <div class="container">
+                    <h3 class="text-center mt-4 mb-4">SALARY TAX CALCULATOR</h3>
+                    <a href="./TaxHistory.html">
+                        <button class="btn btn-success float-right" style="margin-top: -4rem;">Tax History</button>
+                    </a>
                     <form name="myform" class="form-group" id="form">
                         <div class="row jumbotron px-3 py-3 text-center">
                             <div class="col-md-3 mb-4">
@@ -148,8 +161,6 @@
 
 
                     <iframe name="tax_calc_iframe" style="display:none;"></iframe>
-
-
                     <form name="myform" class="form-group" id="form" method="POST" target="tax_calc_iframe" >
                         {% csrf_token %}
                         <div class="row jumbotron px-3 py-3 text-center">
@@ -162,25 +173,25 @@
                                         </div>
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" id="monthly_salary" name="monthly_salary">
-                            </div>
+                                        </div>
                                             <div class="col-md-6 mb-4">
                                                 <label class="inputtext" for="inputname">No. of months</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <input type="text" class="form-control" id="no_months" name="no_months" >
-                            </div>
+                                            </div>
                                                 <div class="col-md-6 mb-4">
                                                     <label class="inputtext" for="inputname">Bonus</label>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <input type="text" class="form-control" id="bonus" name="bonus">
-                            </div>
+                                                 </div>
                                                     <div class="col-md-6 mb-4">
                                                         <label class="inputtext" for="inputname">Allowance</label>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <input type="text" class="form-control" id="allowance" name="allowance">
-                            </div>
+                                                    </div>
                                                         {% comment %} <!-- <hr class="mb-3" style="background-color: blue; border: 1px solid blue; width: 90%;">
                                                             <div class="col-md-6 mb-4">
                                                                 <label class="inputtext" for="inputname">Total Salary</label>
@@ -189,7 +200,7 @@
                                                                 <input type="text" class="form-control" id="total_salary" name="total_salary">
                             </div> --> {% endcomment %}
                                                             </div>
-                    </div>
+                            </div>
                                                         <div class="col-lg-6">
                                                             <h5 style="text-align: left; font-family: Roboto; font-size: 22px;">Annual Deduction</h5>
                                                             <hr class="mb-5" style="background-color: blue; border: 1px solid blue;">
@@ -293,18 +304,23 @@
                    </div>
                                                                                 <div class="col-lg-4 footer-content">
                                                                                     <h6>News</h6>
-                                                                                    <a href="{% url 'politics' %}"><p>Politics</p></a>
-                                                                                    <a href="{% url 'entertainment' %}"><p>Entertainment</p></a>
-                                                                                    <a href="{% url 'sports' %}"><p>Sports</p></a>
-                                                                                    <a href="{% url 'business' %}"><p>Business</p></a>                                                                                </div>
+                                                                                    <a href="{% url 'politics' %}" style="color: white; text-decoration: none;"><p>Politics</p></a>
+                                                                                    <a href="{% url 'entertainment' %}" style="color: white; text-decoration: none;"><p>Entertainment</p></a>
+                                                                                    <a href="{% url 'sports' %}" style="color: white; text-decoration: none;"><p>Sports</p></a>
+                                                                                    <a href="{% url 'business' %}" style="color: white; text-decoration: none;"><p>Business</p></a>                                                                                </div>
                                                                                 <div class="col-lg-4 footer-content">
                                                                                     <h6>You can also find us on</h6>
                                                                                     <div style="font-size: 35px; margin-left: 10px;">
-                                                                                        <i class="fa fa-facebook-official"></i>
-                           &nbsp;&nbsp;
-                           <i class="fa fa-instagram"></i>
-                           &nbsp;&nbsp;
-                           <i class="fa fa-twitter-square"></i>
+                                                                                        <a href = "https://www.facebook.com/News24nepal.tv" target="_blank">
+                                                                                            <i class="fa fa-facebook-official" style="color: blue;"></i>
+                                                                                          </a>
+                                                                                          &nbsp;&nbsp;
+                                                                                          <a href="https://www.instagram.com/ekantipur_news/" target="_blank">
+                                                                                          <i class="fa fa-instagram" style="color:#F56040;;"></i>
+                                                                                          </a>
+                                                                                          &nbsp;&nbsp;
+                                                                                          <a href="twitter.com/rsnpj">
+                                                                                          <i class="fa fa-twitter-square"  style="color: #405DE6;" target="_blank"></i></a>
                                                                                     </div>
                                                                                 </div>
                                                                                 <hr class="mb-3" style="background-color: white; border: 1px solid white; width: 100%; margin-left: 0; margin-right: 0;">
@@ -381,3 +397,5 @@
 
     </script>
 </html>
+
+                   

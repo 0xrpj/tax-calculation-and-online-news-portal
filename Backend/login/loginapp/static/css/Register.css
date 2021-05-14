@@ -159,6 +159,22 @@ input{
 .button:hover {
   background-position: right;
 }
+/*footer css of index.html*/
+.footer{
+	background-color: #090162; 
+	color: white;
+}
+
+.footer-content{
+	margin-top: 20px;
+}
+
+.icons{
+	background-color: ghostwhite;
+	border: 1px solid white;
+	border-radius: 50%;
+	font-size: 15px !important;
+}
 /* .button{
 	 border: none;
      outline: none;

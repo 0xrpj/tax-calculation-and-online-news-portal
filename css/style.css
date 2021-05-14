@@ -132,6 +132,16 @@
 		height: 200px;
 	}
 }
+@media (max-width: 320px){
+	.image{
+		width: 290px;
+		height: 200px;
+	}
+	.image1{
+		width: 295px;
+		height: 200px;
+	}
+}
 @media (max-width: 280px){
 	.image{
 		width: 250px;

@@ -63,6 +63,9 @@
           <a href="{% url 'dashboard' %}" class="nav-link text-dark bg-light">
             <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>Home
           </a>
+          <a href="{% url 'logout' %}" class="nav-link text-dark logout">
+            <i class="fa fa-user-circle mr-3 text-primary fa-fw"></i>Logout
+          </a>
         </li>
       </ul>
     </div>
@@ -89,7 +92,7 @@
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success btn-sm ml-2" type="submit">
+            <button class="btn btn-success btn-sm ml-2" type="submit">
               Search
             </button>
           </form>
@@ -204,10 +207,10 @@
               <!-- </div>
             </div> -->
             <!--logout -->
-            <i
+            <!-- <i
               class="fa fa-user-circle"
               style="color: white; font-size: 34px"
-            ></i>
+            ></i> -->
           </div>
         </div>
       </nav>

@@ -74,3 +74,10 @@
 .footer-content{
 	margin-top: 20px;
 }
+@media (max-width: 768px){
+
+	.search{
+		display: none;
+	}
+
+}
