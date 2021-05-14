@@ -99,10 +99,11 @@
               </button>
             </a>
             <div class="search">
-              <form class="d-flex">
+              <form class="d-flex" action="{% url 'search' %}">
                 <input
                   class="form-control"
                   type="search"
+                  name="search"
                   placeholder="Search"
                   aria-label="Search"
                 />
@@ -110,7 +111,7 @@
                   Search
                 </button>
               </form>
-          </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -154,102 +155,43 @@
         <!--Right side news code-->
         <div class="col-lg-4" id="most_viewed_news">
           <h4 class="viewed_news px-2 py-2 mb-5">Most Viewed News</h4>
+          <!-- {% for po in object_list %} -->
+          <!-- {% endfor %}  -->
+          {% for post in object_list %}
+          {% if forloop.counter < 6  %}
           <div class="row">
             <div class="col-lg-6">
-              <img src="{% static 'Images/pathao.jpg' %}" class="news_image" />
-            </div>
-            <div class="col-lg-6">
-              <p style="font-family: Roboto; font-size: 15px; font-weight: 500">
-                Tootle-Pathao controversy: 5 years on, Nepal undecided between
-                legalising ride-sharing and banning
-              </p>
-            </div>
-          </div>
-          <hr />
-          <div class="row">
-            <div class="col-lg-6">
+              <!-- <img src="{% static 'Images/pathao.jpg' %}" class="news_image"> -->
+              {% if post.header_image %}
               <img
-                src="{% static 'Images/football.jpg' %}"
+                src="{{ post.header_image.url }}"
                 class="news_image"
+                
               />
+              {% else %}
+              <img
+                src="{% static 'Images/icon-image.png' %}"
+                class="news_image"
+                alt="..."
+              />
+              {% endif %}
             </div>
             <div class="col-lg-6">
-              <p style="font-family: Roboto; font-size: 15px; font-weight: 500">
-                Bayern Munich beats Leipzig, takes big step toward Bundesliga
-                title
-              </p>
+              <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title }}</h5></a>
             </div>
           </div>
-          <hr />
-          <div class="row">
-            <div class="col-lg-6">
-              <img src="{% static 'Images/licence.jpg' %}" class="news_image" />
-            </div>
-            <div class="col-lg-6">
-              <p
-                style="
-                  font-family: Roboto;
-                  font-size: 18px;
-                  font-size: 15px;
-                  font-weight: 500;
-                "
-              >
-                New driving licence-holders will have to serve one year’s
-                probation
-              </p>
-            </div>
-          </div>
-          <hr />
-          <div class="row">
-            <div class="col-lg-6">
-              <img src="{% static 'Images/flight.jpg' %}" class="news_image" />
-            </div>
-            <div class="col-lg-6">
-              <p style="font-family: Roboto; font-size: 15px; font-weight: 500">
-                Nepal allows internet facility in its sky during international
-                flights
-              </p>
-            </div>
-          </div>
-          <hr />
+          <hr>
+          {% endif %}
+          {% endfor %}
           <h4 class="viewed_news px-2 py-2 mb-5">Trending</h4>
-          <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold">
-            Tootle-Pathao controversy: 5 years on, Nepal undecided between
-            legalising ride-sharing and banning
-          </h5>
-          <hr />
-          <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold">
-            Bayern Munich beats Leipzig, takes big step toward Bundesliga title
-          </h5>
-          <hr />
-          <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold">
-            New driving licence-holders will have to serve one year’s probation
-          </h5>
-          <hr />
-          <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold">
-            Nepal allows internet facility in its sky during international
-            flights
-          </h5>
-          <hr />
-          <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold">
-            Nepal allows internet facility in its sky during international
-            flights
-          </h5>
-          <hr />
-          <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold">
-            New driving licence-holders will have to serve one year’s probation
-          </h5>
-          <hr />
-          <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold">
-            Bayern Munich beats Leipzig, takes big step toward Bundesliga title
-          </h5>
-          <hr />
-          <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold">
-            Tootle-Pathao controversy: 5 years on, Nepal undecided between
-            legalising ride-sharing and banning
-          </h5>
-          <hr />
-        </div>
+          {% for post in object_list %}
+          {% if forloop.counter < 6  %}
+          <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title }}</h5></a>
+          <hr>
+          {% endif %}
+          {% endfor %}
+          
+      </div>
       </div>
     </div>
     <!--Footer-->

@@ -85,17 +85,20 @@
               <img class="navbar-logo" src="{% static 'images/logo1.png' %}" />
             </a>
           </div>
-          <form class="d-flex">
-            <input
-              class="form-control"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-success btn-sm ml-2" type="submit">
-              Search
-            </button>
-          </form>
+          <div class="search">
+            <form class="d-flex" action="{% url 'search' %}">
+              <input
+                class="form-control"
+                type="search"
+                name="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-success btn-sm ml-2" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
           <div style="margin-bottom: 5px">
             <!--add button-->
             <button

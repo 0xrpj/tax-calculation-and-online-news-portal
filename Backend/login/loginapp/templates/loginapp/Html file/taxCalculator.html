@@ -109,10 +109,11 @@
                         </button>
                       </a>
                       <div class="search">
-                        <form class="d-flex">
+                        <form class="d-flex" action="{% url 'search' %}">
                           <input
                             class="form-control"
                             type="search"
+                            name="search"
                             placeholder="Search"
                             aria-label="Search"
                           />
@@ -128,7 +129,7 @@
             
                 <div class="container">
                     <h3 class="text-center mt-4 mb-4">SALARY TAX CALCULATOR</h3>
-                    <a href="./TaxHistory.html">
+                    <a href="{% url 'Tax_History' %}">
                         <button class="btn btn-success float-right" style="margin-top: -4rem;">Tax History</button>
                     </a>
                     <form name="myform" class="form-group" id="form">

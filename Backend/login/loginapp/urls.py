@@ -15,6 +15,7 @@ urlpatterns = [
     path('sports/', SportsView.as_view(), name="sports"),
     path('business/', BusinessView.as_view(), name="business"),
     path('about/', views.AboutView, name="about"),
+    path('search/', views.search, name="search"),
 
     # path('blog/', Blog.as_view(), name="Blog"),
     path('article/<int:pk>', Detail_Article_View.as_view(), name="article-detail"),

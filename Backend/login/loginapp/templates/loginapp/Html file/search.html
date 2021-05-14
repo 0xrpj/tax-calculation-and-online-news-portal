@@ -119,14 +119,25 @@
     <div class="bg-image">
       <div class="overlay">
         <div class="container">
-          <h4 class="topic text-center">Politics</h4>
+            {% if searched %}
+            {% if filtered %}
+            <h4 class="topic text-center">News related to your search: {{ searched }}</h4>
+            {% else %}
+            <h4 class="topic text-center">No News related to your search: {{ searched }}</h4>
+            {% endif %}
+            {% else %}
+            <h4 class="topic text-center">You searched an empty field.</h4>
+
+            {% endif %}
         </div>
       </div>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mt-5">
-          {% for post in object_list %} {% if post.category == 'Politics' %}
+            {% if searched %}
+            {% if filtered %}
+          {% for post in filtered %}
           <div class="row">
             <div class="col-lg-5">
               <!-- <img src="{% static 'Images/Covid.jpg' %}" style="width: 100%" /> -->
@@ -135,7 +146,7 @@
               {% else %}
               <img
                 src="{% static 'Images/icon-image.png' %}"
-                style="width: 100%; height: 150px; object-fit: cover;"
+                style="width: 100%"
               />
               {% endif %}
             </div>
@@ -150,14 +161,17 @@
             </div>
             <hr style="border: 1px solid grey; width: 98%" />
           </div>
-          {% endif%} {% endfor %}
+          {% endfor %}
+          
+          {% endif %}
+          {% endif%}
         </div>
         <!--Right side news code-->
         <div class="col-lg-4" id="most_viewed_news">
           <h4 class="viewed_news px-2 py-2 mb-5">Most Viewed News</h4>
           <!-- {% for po in object_list %} -->
           <!-- {% endfor %}  -->
-          {% for post in object_list %}
+          {% for post in posts %}
           {% if forloop.counter < 6  %}
           <div class="row">
             <div class="col-lg-6">
@@ -184,7 +198,7 @@
           {% endif %}
           {% endfor %}
           <h4 class="viewed_news px-2 py-2 mb-5">Trending</h4>
-          {% for post in object_list %}
+          {% for post in posts %}
           {% if forloop.counter < 6  %}
           <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title }}</h5></a>
           <hr>
@@ -195,45 +209,36 @@
       </div>
     </div>
     <!--Footer-->
-    <div class="footer" style="margin-top: 25px; background-color: #090162; color: white;">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 footer-content">
-            <img src="{% static 'Images/logo1.png' %}" class="navbar-logo" />
-            <p>The english edition Online News</p>
-            <p>Phone No: 9856234124,014256352</p>
-            <p>taxcompany@gmail.com</p>
-          </div>
-          <div class="col-lg-4 footer-content">
-            <h6>News</h6>
-            <a href="{% url 'politics' %}" style="color: white; text-decoration: none;"><p>Politics</p></a>
-            <a href="{% url 'entertainment' %}" style="color: white; text-decoration: none;"><p>Entertainment</p></a>
-            <a href="{% url 'sports' %}" style="color: white; text-decoration: none;"><p>Sports</p></a>
-            <a href="{% url 'business' %}" style="color: white; text-decoration: none;"><p>Business</p></a>
-          </div>
-          <div class="col-lg-4 footer-content">
-            <h6>You can also find us on</h6>
-            <div style="font-size: 35px; margin-left: 10px">
-              <a href = "https://www.facebook.com/News24nepal.tv" target="_blank">
-                <i class="fa fa-facebook-official" style="color: blue;"></i>
-              </a>
-              &nbsp;&nbsp;
-              <a href="https://www.instagram.com/ekantipur_news/" target="_blank">
-              <i class="fa fa-instagram" style="color:#F56040;;"></i>
-              </a>
-              &nbsp;&nbsp;
-              <a href="twitter.com/rsnpj">
-              <i class="fa fa-twitter-square"  style="color: #405DE6;" target="_blank"></i></a>
-            </div>
-          </div>
-          <hr class="mb-3" style="background-color: white; border: 1px solid white; width: 100%; margin-left: 0; margin-right: 0;">
-          <div style="background-color: #090162; color: white; width: 100%">
-            <p style="text-align: center">
-              Copyright &copy; 2021 Tax Management System, All rights reserved
-            </p>
-          </div>
+    <div class="row footer" style="margin-top: 25px; background-color: #090162; color: white;">
+      <div class="col-lg-4 footer-content">
+        <img src="{% static 'Images/logo1.png' %}" class="navbar-logo" />
+        <p>The english edition Online News</p>
+        <p>Phone No: 9856234124,014256352</p>
+        <p>taxcompany@gmail.com</p>
       </div>
-    </div>
+      <div class="col-lg-4 footer-content">
+        <h6>News</h6>
+        <a href="{% url 'politics' %}"><p>Politics</p></a>
+        <a href="{% url 'entertainment' %}"><p>Entertainment</p></a>
+        <a href="{% url 'sports' %}"><p>Sports</p></a>
+        <a href="{% url 'business' %}"><p>Business</p></a>
+      </div>
+      <div class="col-lg-4 footer-content">
+        <h6>You can also find us on</h6>
+        <div style="font-size: 35px; margin-left: 10px">
+          <i class="fa fa-facebook-official"></i>
+          &nbsp;&nbsp;
+          <i class="fa fa-instagram"></i>
+          &nbsp;&nbsp;
+          <i class="fa fa-twitter-square"></i>
+        </div>
+      </div>
+      <hr class="mb-3" style="background-color: white; border: 1px solid white; width: 100%; margin-left: 0; margin-right: 0;">
+      <div style="background-color: #090162; color: white; width: 100%">
+        <p style="text-align: center">
+          Copyright &copy; 2021 Tax Management System, All rights reserved
+        </p>
+      </div>
     </div>
   </body>
 </html>

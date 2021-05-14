@@ -104,10 +104,11 @@
               </button>
             </a>
             <div class="search">
-              <form class="d-flex">
+              <form class="d-flex" action="{% url 'search' %}">
                 <input
                   class="form-control"
                   type="search"
+                  name="search"
                   placeholder="Search"
                   aria-label="Search"
                 />

@@ -14,9 +14,19 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
+
+def search(request):
+    if request.method == 'GET':
+        searched = request.GET['search']
+        filtered = Post.objects.filter(title__contains=searched)
+        posts = Post.objects.all()
+
+        context = {'searched': searched,
+        'filtered': filtered, 'posts': posts}
+        return render(request, "loginapp/Html file/search.html",context)
+
+
 # Dispaly for register page
-
-
 def registerPage(request):
     # Checks login status and if loggedin redirects to home page
     if request.user.is_authenticated:
@@ -107,6 +117,12 @@ class Detail_Article_View(DetailView):
     model = Post
     # location to make post model visible
     template_name = 'loginapp/Html file/blog.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(Detail_Article_View, self).get_context_data(*args, **kwargs)
+        context['posts'] = Post.objects.all()
+        return context
+
 
 # For detail home page
 

@@ -22,89 +22,90 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <div class="header">
-            <nav class="navbar navbar-expand-md navbar-dark navigation">
-              <div class="container">
-                <a
-                  href="{% url 'home' %}"
-                  class="navbar-brand text-warning font-weight-bold"
-                >
-                  <img class="navbar-logo" src="{% static 'Images/logo1.png' %}" />
-                </a>
-      
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapsenavbar"
-                >
-                  <span class="navbar-toggler-icon"> </span>
-                </button>
-                <div class="collapse navbar-collapse text-center" id="collapsenavbar">
-                  <ul class="navbar-nav ml-auto mr-auto">
-                    <li class="nav-item">
-                      <a href="{% url 'home' %}" class="nav-link text-white">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="{% url 'about' %}" class="nav-link text-white">ABOUT US</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        id="navbarDropdown"
-                        role="button"
-                        data-toggle="dropdown"
-                        style="color: white"
-                      >
-                        NEWS
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'politics' %}">
-                          POLITICS
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'entertainment' %}">
-                          ENTERTAINMENT
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'business' %}">
-                          BUSINESS
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'sports' %}">
-                          SPORTS
-                        </a>
-                      </div>
-                    </li>
-                    <li class="nav-item">
-                      <a href="{% url 'Tax_calculator' %}" class="nav-link text-white"
-                        >TAX CALCULATOR</a
-                      >
-                    </li>
-                  </ul>
-                  <a href="{% url 'logout' %}" class="nav-link text-white">
-                    <button type="button" class="btn btn-primary btn-sm">
-                      Logout
-                    </button>
+      <div class="header">
+        <nav class="navbar navbar-expand-md navbar-dark navigation">
+          <div class="container">
+            <a
+              href="{% url 'home' %}"
+              class="navbar-brand text-warning font-weight-bold"
+            >
+              <img class="navbar-logo" src="{% static 'Images/logo1.png' %}" />
+            </a>
+  
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapsenavbar"
+            >
+              <span class="navbar-toggler-icon"> </span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+              <ul class="navbar-nav ml-auto mr-auto">
+                <li class="nav-item">
+                  <a href="{% url 'home' %}" class="nav-link text-white">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'about' %}" class="nav-link text-white">ABOUT US</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    style="color: white"
+                  >
+                    NEWS
                   </a>
-                  <div class="search">
-                    <form class="d-flex">
-                      <input
-                        class="form-control"
-                        type="search"
-                        placeholder="Search"
-                        aria-label="Search"
-                      />
-                      <button class="btn btn-success btn-sm ml-2" type="submit">
-                        Search
-                      </button>
-                    </form>
-                </div>
-                </div>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'politics' %}">
+                      POLITICS
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'entertainment' %}">
+                      ENTERTAINMENT
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'business' %}">
+                      BUSINESS
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'sports' %}">
+                      SPORTS
+                    </a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'Tax_calculator' %}" class="nav-link text-white"
+                    >TAX CALCULATOR</a
+                  >
+                </li>
+              </ul>
+              <a href="{% url 'logout' %}" class="nav-link text-white">
+                <button type="button" class="btn btn-primary btn-sm">
+                  Logout
+                </button>
+              </a>
+              <div class="search">
+                <form class="d-flex" action="{% url 'search' %}">
+                  <input
+                    class="form-control"
+                    type="search"
+                    name="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button class="btn btn-success btn-sm ml-2" type="submit">
+                    Search
+                  </button>
+                </form>
               </div>
-            </nav>
+            </div>
           </div>
+        </nav>
+      </div>
 
         <div class = "news-body">
             <div class="news_container px-4">
@@ -207,64 +208,44 @@
 
                     <!--Right side news code-->
                     <div class="col-lg-4" id="most_viewed_news">
-                        <h4 class="viewed_news px-2 py-2 mb-5">Most Viewed News</h4>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <img src="{% static 'Images/pathao.jpg' %}" class="news_image">
-                            </div>
-                            <div class="col-lg-6">
-                                <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">Tootle-Pathao controversy: 5 years on, Nepal undecided between legalising ride-sharing and banning</h5>
-                            </div>
+                      <h4 class="viewed_news px-2 py-2 mb-5">Most Viewed News</h4>
+                      <!-- {% for po in object_list %} -->
+                      <!-- {% endfor %}  -->
+                      {% for post in posts %}
+                      {% if forloop.counter < 6  %}
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <!-- <img src="{% static 'Images/pathao.jpg' %}" class="news_image"> -->
+                          {% if post.header_image %}
+                          <img
+                            src="{{ post.header_image.url }}"
+                            class="news_image"
+                            
+                          />
+                          {% else %}
+                          <img
+                            src="{% static 'Images/icon-image.png' %}"
+                            class="news_image"
+                            alt="..."
+                          />
+                          {% endif %}
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <img src="{% static 'Images/football.jpg' %}" class="news_image">
-                            </div>
-                            <div class="col-lg-6">
-                                <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">Bayern Munich beats Leipzig, takes big step toward Bundesliga title
-                                </h5>
-                            </div>
+                        <div class="col-lg-6">
+                          <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title }}</h5></a>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <img src="{% static 'Images/licence.jpg' %}" class="news_image">
-                            </div>
-                            <div class="col-lg-6">
-                                <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">New driving licence-holders will have to serve one year’s probation</h5>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <img src="{% static 'Images/flight.jpg' %}" class="news_image">
-                            </div>
-                            <div class="col-lg-6">
-                                <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">Nepal allows internet facility in its sky during international flights</h5>
-                            </div>
-                        </div>
-                        <hr>
-                        <h4 class="viewed_news px-2 py-2 mb-5">Trending</h4>
-                            <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">Tootle-Pathao controversy: 5 years on, Nepal undecided between legalising ride-sharing and banning</h5>
-                        <hr>
-                        <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">Bayern Munich beats Leipzig, takes big step toward Bundesliga title
-                        </h5>
-                        <hr>
-                        <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">New driving licence-holders will have to serve one year’s probation</h5>
-                        <hr>
-                        <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">Nepal allows internet facility in its sky during international flights</h5> 
-                        <hr>
-                        <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">Nepal allows internet facility in its sky during international flights</h5> 
-                        <hr>
-                        <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">New driving licence-holders will have to serve one year’s probation</h5>
-                        <hr>
-                        <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">Bayern Munich beats Leipzig, takes big step toward Bundesliga title
-                        </h5>
-                        <hr>
-                        <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">Tootle-Pathao controversy: 5 years on, Nepal undecided between legalising ride-sharing and banning</h5>
-                        <hr>
-                    </div>
+                      </div>
+                      <hr>
+                      {% endif %}
+                      {% endfor %}
+                      <h4 class="viewed_news px-2 py-2 mb-5">Trending</h4>
+                      {% for post in posts %}
+                      {% if forloop.counter < 6  %}
+                      <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title }}</h5></a>
+                      <hr>
+                      {% endif %}
+                      {% endfor %}
+                      
+                  </div>
                 </div>
             </div>
             <!--Footer-->
