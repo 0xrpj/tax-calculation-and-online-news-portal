@@ -231,7 +231,8 @@
                           {% endif %}
                         </div>
                         <div class="col-lg-6">
-                          <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title }}</h5></a>
+                          <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title|truncatechars:50 }}</h5></a>
+                          <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title|truncatechars:50 }}</h5>
                         </div>
                       </div>
                       <hr>
@@ -240,7 +241,8 @@
                       <h4 class="viewed_news px-2 py-2 mb-5">Trending</h4>
                       {% for post in posts %}
                       {% if forloop.counter < 6  %}
-                      <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title }}</h5></a>
+                      <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title|truncatechars:50 }}</h5></a>
+                      <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title|truncatechars:50 }}</h5>
                       <hr>
                       {% endif %}
                       {% endfor %}

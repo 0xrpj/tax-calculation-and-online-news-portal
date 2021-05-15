@@ -140,13 +140,13 @@
               {% endif %}
             </div>
             <div class="col-lg-7">
-              <a href="{% url 'article-detail' post.pk %}"><p class="title">{{ post.title }}</p></a>
+              <a href="{% url 'article-detail' post.pk %}"><p class="title">{{ post.title|truncatechars:100 }}</p></a>
               <div class="row ml-2">
                 <i class="fa fa-clock-o" aria-hidden="true"> 1 day ago</i>
                 &nbsp;&nbsp;&nbsp;
                 <i class="fa fa-comment" aria-hidden="true"> 0 comments</i>
               </div>
-              {{ post.body|truncatewords:8 }}
+              {{ post.body|truncatechars:100 }}
             </div>
             <hr style="border: 1px solid grey; width: 98%" />
           </div>
@@ -177,7 +177,8 @@
               {% endif %}
             </div>
             <div class="col-lg-6">
-              <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title }}</h5></a>
+              <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title|truncatechars:50 }}</h5></a>
+              <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.body|truncatechars:50 }}</h5>
             </div>
           </div>
           <hr>
@@ -186,7 +187,8 @@
           <h4 class="viewed_news px-2 py-2 mb-5">Trending</h4>
           {% for post in object_list %}
           {% if forloop.counter < 6  %}
-          <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title }}</h5></a>
+          <a href="{% url 'article-detail' post.pk %}"><h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.title|truncatechars:50 }}</h5></a>
+          <h5 style="font-family: Roboto; font-size: 18px; font-weight: bold;">{{ post.body|truncatechars:50 }}</h5>
           <hr>
           {% endif %}
           {% endfor %}

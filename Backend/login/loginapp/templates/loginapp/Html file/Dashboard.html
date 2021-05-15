@@ -232,11 +232,11 @@
   
               <div class="card-body">
                 <h5 class="card-title">
-                  {{ post.title }} - admin
+                  {{ post.title|truncatechars:100 }} - admin
                 </h5>
                 <h6 class="card-subtitle mb-2 text-black">{{ post.category}}</h6>
                 <p class="card-text">
-                  {{ post.body|truncatewords:8 }}
+                  {{ post.body|truncatechars:100 }}
                 </p>
               </div>
             </div>

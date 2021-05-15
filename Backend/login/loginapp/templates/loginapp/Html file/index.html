@@ -236,10 +236,10 @@
               <h4 class="businessHeading ml-2">
                 <a href="{% url 'article-detail' post.pk %}"
                 style="text-decoration: none"
-                  >{{ post.title }}</a
+                  >{{ post.title|truncatechars:100 }}</a
                 >
               </h4>
-              <p class="businessTopic ml-2">{{ post.body|truncatewords:9 }}</p>
+              <p class="businessTopic ml-2">{{ post.body|truncatechars:100 }}</p>
             </div>
           </div>
           {% endif%}
@@ -274,10 +274,10 @@
               <h4 class="businessHeading ml-2">
                 <a href="{% url 'article-detail' post.pk %}"
                 style="text-decoration: none"
-                  >{{ post.title }}</a
+                  >{{ post.title|truncatechars:100 }}</a
                 >
               </h4>
-              <p class="businessTopic ml-2">{{ post.body }}</p>
+              <p class="businessTopic ml-2">{{ post.body|truncatechars:100 }}</p>
             </div>
           </div>
           {% endif%}
@@ -312,10 +312,10 @@
               <h4 class="businessHeading ml-2">
                 <a href="{% url 'article-detail' post.pk %}"
                 style="text-decoration: none"
-                  >{{ post.title }}</a
+                  >{{ post.title|truncatechars:100 }}</a
                 >
               </h4>
-              <p class="businessTopic ml-2">{{ post.body }}</p>
+              <p class="businessTopic ml-2">{{ post.body|truncatechars:100 }}</p>
             </div>
           </div>
           {% endif%}
@@ -349,10 +349,10 @@
               <h4 class="businessHeading ml-2">
                 <a href="{% url 'article-detail' post.pk %}"
                 style="text-decoration: none"
-                  >{{ post.title }}</a
+                  >{{ post.title|truncatechars:100 }}</a
                 >
               </h4>
-              <p class="businessTopic ml-2">{{ post.body }}</p>
+              <p class="businessTopic ml-2">{{ post.body|truncatechars:100 }}</p>
             </div>
           </div>
           {% endif%}
