@@ -1,3 +1,5 @@
+from django.http import request
+from .decorators import admin_only, allowed_users, unauthenticated_user
 from django.db.models import fields
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -7,7 +9,7 @@ from django.urls import reverse, reverse_lazy
 
 
 from django.contrib.auth import authenticate, login, logout
-from .models import History, Post, Tax, TaxOne
+from .models import History, Post, TaxOne
 from .forms import CreateUserForm, PostForm, EditForm, TaxCalculation
 
 from django.contrib.auth.decorators import login_required
@@ -22,10 +24,11 @@ def search(request):
         posts = Post.objects.all()
 
         context = {'searched': searched,
-        'filtered': filtered, 'posts': posts}
-        return render(request, "loginapp/Html file/search.html",context)
+                   'filtered': filtered, 'posts': posts}
+        return render(request, "loginapp/Html file/search.html", context)
 
 
+@unauthenticated_user
 # Dispaly for register page
 def registerPage(request):
     # Checks login status and if loggedin redirects to home page
@@ -46,20 +49,19 @@ def registerPage(request):
                     int(data)
                     return True
                 except ValueError:
-                    return False    
-
+                    return False
 
             # def clean_username(self):
             #     username_passed = self.cleaned_data.get('username')
-                
 
             if form.is_valid():
                 username = form.cleaned_data.get('username')
                 if isNum(username):
-                    # try:    
+                    # try:
                     #     raise forms.ValidationError("Invalid username can't be only numbers.")
                     # except:
-                    messages.info(request, 'Invalid username, can not be only numbers.')   
+                    messages.info(
+                        request, 'Invalid username, can not be only numbers.')
                 else:
                     form.save()
                 # user = form.cleaned_data.get('username')
@@ -70,6 +72,7 @@ def registerPage(request):
         return render(request, 'loginapp/Html file/Register.html', context)
 
 
+@unauthenticated_user
 def loginPage(request):
     # Checks login status and if loggedin redirects to home page
     if request.user.is_authenticated:
@@ -119,7 +122,8 @@ class Detail_Article_View(DetailView):
     template_name = 'loginapp/Html file/blog.html'
 
     def get_context_data(self, *args, **kwargs):
-        context = super(Detail_Article_View, self).get_context_data(*args, **kwargs)
+        context = super(Detail_Article_View,
+                        self).get_context_data(*args, **kwargs)
         context['posts'] = Post.objects.all()
         return context
 
@@ -156,14 +160,18 @@ class BusinessView(LoginRequiredMixin, ListView):
     template_name = 'loginapp/Html file/Business.html'
 
 
+@allowed_users
+@admin_only
 # For dashboard page
-class AddPostView(LoginRequiredMixin, CreateView, ListView):
+def AddPostView(LoginRequiredMixin, CreateView, ListView):
     model = Post
     form_class = PostForm
     # location to make post model visible
     template_name = 'loginapp/Html file/Dashboard.html'
     # if delete is success redirect to dashboard
     success_url = reverse_lazy('dashboard')
+    Var_Store = Post.objects.all()
+    return render(request, 'loginapp/Html file/Dashboard.html', {"object_list": Var_Store})
 
     # fields = '__all__'
 
@@ -258,3 +266,8 @@ def Tax_History(request):
 def AboutView(request):
     model = Post
     return render(request, 'loginapp/Html file/About.html')
+
+
+def error_404(request, exception):
+    data = {}
+    return render(request, 'loginapp/Html file/Error.html', data)

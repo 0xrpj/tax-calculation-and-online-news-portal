@@ -21,7 +21,7 @@ urlpatterns = [
     path('article/<int:pk>', Detail_Article_View.as_view(), name="article-detail"),
     path('article/<int:pk>/update/', UpdatePostView.as_view(), name="update_post"),
     path('article/<int:pk>/delete/', DeletePostView.as_view(), name="delete_post"),
-    path('dashboard/', AddPostView.as_view(), name='dashboard'),
+    path('dashboard/', views.AddPostView, name='dashboard'),
 
     # tax calculation
     path('tax/', views.Tax_calculator, name="Tax_calculator"),

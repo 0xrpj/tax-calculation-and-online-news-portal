@@ -48,9 +48,3 @@ class TaxOne(models.Model):
     taxable_income = models.FloatField(null=True)
     net_payable_tax = models.FloatField(null=True)
 
-
-class History(models.Model):
-    taxable_income = models.IntegerField(null=True)
-    annual_gross_salary = models.IntegerField(null=True)
-    tax_slab_percentages = models.CharField(null=True, max_length=5)
-    net_payable_tax = models.IntegerField(null=True)
