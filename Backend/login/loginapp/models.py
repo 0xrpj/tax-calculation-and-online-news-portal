@@ -47,4 +47,3 @@ class TaxOne(models.Model):
     tax_slab_percentage = models.CharField(null=True, max_length=5)
     taxable_income = models.FloatField(null=True)
     net_payable_tax = models.FloatField(null=True)
-

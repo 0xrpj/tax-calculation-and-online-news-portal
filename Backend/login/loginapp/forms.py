@@ -2,7 +2,7 @@ from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-from .models import Post, Category, Tax, History
+from .models import Post, Category, Tax, TaxOne
 
 choices = Category.objects.all().values_list('name', 'name')
 
@@ -44,15 +44,8 @@ class EditForm(forms.ModelForm):
         }
 
 
-class TaxCalculation(forms.ModelForm):
-    class Meta:
-        model = Tax
-        fields = ('monthly_salary', 'no_months', 'bonus', 'allowance',
-                  'emp_provident', 'CIT', 'insurance')
-
-
 class TaxHistory(forms.ModelForm):
     class Meta:
-        model = History
-        fields = ('taxable_income', 'annual_gross_salary',
-                  'tax_slab_percentages', 'net_payable_tax')
+        model = TaxOne
+        fields = ('annual_gross_salary', 'tax_slab_percentage',
+                  'taxable_income', 'net_payable_tax')

@@ -9,7 +9,7 @@ from django.urls import reverse, reverse_lazy
 
 
 from django.contrib.auth import authenticate, login, logout
-from .models import History, Post, TaxOne
+from .models import Post, TaxOne
 from .forms import CreateUserForm, PostForm, EditForm, TaxCalculation
 
 from django.contrib.auth.decorators import login_required
@@ -259,7 +259,7 @@ def Tax_calculator(request):
 
 
 def Tax_History(request):
-    all_members = History.objects.all
+    all_members = TaxOne.objects.all
     return render(request, 'loginapp/Html file/TaxHistory.html', {'all': all_members})
 
 
