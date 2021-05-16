@@ -1,4 +1,4 @@
-{% load static %}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Tax Management System</title>
@@ -155,7 +155,7 @@
             <nav class="navbar navbar-expand-md navbar-dark navigation">
                 <div class="container">
                     <a href="../index.html" class="navbar-brand text-warning font-weight-bold"> 	
-                        <img class ="navbar-logo" src = "{% static 'Images/logo1.png' %}">
+                        <img class ="navbar-logo" src = "../images/logo1.png">
                     </a>
     
                     <button class ="navbar-toggler type="button" data-toggle="collapse" data-target="#collapsenavbar">
@@ -165,7 +165,7 @@
                     <div class="collapse navbar-collapse text-center " id="collapsenavbar">
                         <ul class="navbar-nav ml-auto mr-auto">
                             <li class="nav-item"> 
-                                <a href="{% url 'home' %}" class="nav-link text-white">HOME</a>
+                                <a href="../index.html" class="nav-link text-white">HOME</a>
                             </li>
                             <li class="nav-item"> 
                                 <a href="./About.html" class="nav-link text-white">ABOUT US</a>
@@ -175,28 +175,28 @@
                                     NEWS
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{% url 'politics' %}">
+                                    <a class="dropdown-item" href="./News.html">
                                         POLITICS
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{% url 'entertainment' %}">
+                                    <a class="dropdown-item" href="#">
                                         ENTERTAINMENT
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{% url 'business' %}">
+                                    <a class="dropdown-item" href="#">
                                         BUSINESS
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{% url 'sports' %}">
+                                    <a class="dropdown-item" href="#">
                                         SPORTS
                                     </a>
                                 </div>
                             </li>
                             <li class="nav-item"> 
-                                <a href=""{% url 'Tax_calculator' %}" class="nav-link text-white">TAX CALCULATOR</a>
+                                <a href="taxCalculator.html" class="nav-link text-white">TAX CALCULATOR</a>
                             </li>
                         </ul>
-                        <a href="{% url 'login' %}" class="nav-link text-white">
+                        <a href="./SignIn.html" class="nav-link text-white">
                             <button type="button" class="btn btn-primary btn-sm">Sign-in</button>
                         </a>
                         <div class="search">
@@ -210,7 +210,6 @@
             </nav>
         </div>
         <div class="bg-img">
-              <img src="{% static 'Images/building.jpg' %}" class="building-img ">
             <button class="btn btn-success button">Go back to Home Page</button>
         </div>
         <footer class="footer">

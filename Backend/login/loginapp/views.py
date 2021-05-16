@@ -159,10 +159,11 @@ class BusinessView(LoginRequiredMixin, ListView):
     # location to make post model visible
     template_name = 'loginapp/Html file/Business.html'
 
+
+# For dashboard page
 @allowed_users(allowed_roles=['admin'])
 @admin_only
-# For dashboard page
-def AddPostView(LoginRequiredMixin, CreateView, ListView):
+def AddPostView(request, LoginRequiredMixin, CreateView, ListView):
     model = Post
     form_class = PostForm
     # location to make post model visible
@@ -171,7 +172,6 @@ def AddPostView(LoginRequiredMixin, CreateView, ListView):
     success_url = reverse_lazy('dashboard')
     Var_Store = Post.objects.all()
     return render(request, 'loginapp/Html file/Dashboard.html', {"object_list": Var_Store})
-
     # fields = '__all__'
 
 
@@ -240,20 +240,16 @@ def Tax_calculator(request):
         else:
             tax_slab_percentage = 'weird error'
             net_payable_tax = 0
-        # str(taxable_income).save()
+
         print("Annual Gross Salary: " + str(annual_gross_salary))
         print("Slab percentage: " + str(tax_slab_percentage))
         print("Taxable income: " + str(taxable_income))
         print("Net payable tax: " + str(net_payable_tax))
 
-        # db_name = Tax(monthly_salary=monthly_salary, no_months=no_months, bonus=bonus,
-        #               allowance=allowance, emp_provident=emp_provident, CIT=CIT, insurance=insurance)
         db_name = TaxOne(annual_gross_salary=annual_gross_salary, tax_slab_percentage=tax_slab_percentage,
                          taxable_income=taxable_income, net_payable_tax=net_payable_tax)
         db_name.save()
-        # annual_gross_salary = request.POST['annual_gross_salary']
-        # tax_slab_percentage = request.POST['tax_slab_percentage']
-        # net_payable_tax = request.POST['net_payable_tax']
+
     return render(request, 'loginapp/Html file/TaxCalculator.html')
 
 
