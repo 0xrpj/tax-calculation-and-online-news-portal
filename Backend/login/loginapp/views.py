@@ -164,14 +164,23 @@ class BusinessView(LoginRequiredMixin, ListView):
 @allowed_users(allowed_roles=['admin'])
 @admin_only
 def AddPostView(request, LoginRequiredMixin, CreateView, ListView):
-    model = Post
-    form_class = PostForm
+    # model = Post
+    # form_class = PostForm
+
+    form = PostForm(request.POST, request.FILES or None)
+    if form.is_valid():
+        check = form.save(commit=False)
+        check.user = request.user
+        check.save()
+        return redirect('dashboard')
+    
     # location to make post model visible
     # template_name = 'loginapp/Html file/Dashboard.html'
     # if delete is success redirect to dashboard
-    success_url = reverse_lazy('dashboard')
     Var_Store = Post.objects.all()
-    return render(request, 'loginapp/Html file/Dashboard.html', {"object_list": Var_Store})
+    Input_Form = form
+    success_url = reverse_lazy('dashboard')
+    return render(request, 'loginapp/Html file/Dashboard.html', {"object_list": Var_Store, "form": Input_Form})
     # fields = '__all__'
 
 
