@@ -10,7 +10,7 @@ from django.urls import reverse, reverse_lazy
 
 from django.contrib.auth import authenticate, login, logout
 from .models import Post, TaxOne
-from .forms import CreateUserForm, PostForm, EditForm, TaxCalculation
+from .forms import CreateUserForm, PostForm, EditForm
 
 from django.contrib.auth.decorators import login_required
 from django.views import generic
@@ -159,15 +159,14 @@ class BusinessView(LoginRequiredMixin, ListView):
     # location to make post model visible
     template_name = 'loginapp/Html file/Business.html'
 
-
-@allowed_users
+@allowed_users(allowed_roles=['admin'])
 @admin_only
 # For dashboard page
 def AddPostView(LoginRequiredMixin, CreateView, ListView):
     model = Post
     form_class = PostForm
     # location to make post model visible
-    template_name = 'loginapp/Html file/Dashboard.html'
+    # template_name = 'loginapp/Html file/Dashboard.html'
     # if delete is success redirect to dashboard
     success_url = reverse_lazy('dashboard')
     Var_Store = Post.objects.all()
