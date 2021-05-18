@@ -346,68 +346,66 @@
         var insurance = parseFloat(document.getElementById("insurance").value);
         var allowance = parseFloat(document.getElementById("allowance").value);
 
-        if (monthly_salary > 0 && no_of_months > 0 && festival_bonus > 0 && citizen_investfund > 0 && provident_fund > 0 && insurance > allowance > 0) {
-            //annual gross salary
-            var annual_gross_salary = monthly_salary * no_of_months;
-            console.log("Annual gross salary is: " + annual_gross_salary);
+        // if (monthly_salary > 0 && no_of_months > 0 && festival_bonus > 0 && citizen_investfund > 0 && provident_fund > 0 && insurance > allowance > 0) {
+        //annual gross salary
+        var annual_gross_salary = monthly_salary * no_of_months;
+        console.log("Annual gross salary is: " + annual_gross_salary);
 
-            //taxable income
-            var taxable_income = annual_gross_salary + festival_bonus + allowance - provident_fund - citizen_investfund - insurance;
-            console.log("Taxable income is: " + taxable_income);
+        //taxable income
+        var taxable_income = annual_gross_salary + festival_bonus + allowance - provident_fund - citizen_investfund - insurance;
+        console.log("Taxable income is: " + taxable_income);
 
-            //tax slab
-            var tax_slab_percentage;
-            var net_payable_tax;
+        //tax slab
+        var tax_slab_percentage;
+        var net_payable_tax;
 
-            //first slab
-            if (taxable_income <= 400000) {
-                tax_slab_percentage = '1 %';
-                net_payable_tax = taxable_income * 0.01;
-            }
-            //second slab
-
-            else if (taxable_income > 400000 && taxable_income <= 500000) {
-                tax_slab_percentage = '10 %';
-                net_payable_tax = 0.01 * 400000 + 0.10 * (taxable_income - 400000);
-            }
-            //third slab
-            else if (taxable_income > 500000 && taxable_income <= 700000) {
-                tax_slab_percentage = '20 %';
-                net_payable_tax = 0.01 * 400000 + 0.10 * 100000 + 0.20 * (taxable_income - 500000);
-            }
-            //fourth slab
-            else if (taxable_income > 700000 && taxable_income <= 2000000) {
-                tax_slab_percentage = '30 %';
-                net_payable_tax = 0.01 * 400000 + 0.10 * 100000 + 0.20 * 200000 + 0.30 * (taxable_income - 700000);
-            }
-            //final slab
-            else if (taxable_income > 2000000) {
-                tax_slab_percentage = '36 %';
-                net_payable_tax = 0.01 * 400000 + 0.10 * 100000 + 0.20 * 200000 + 0.30 * 1300000 + 0.36 * (taxable_income - 2000000);
-            } else {
-                tax_slab_percentage = 'weird error';
-                net_payable_tax = 0;
-            }
-
-
-            console.log("Net payable tax is: " + net_payable_tax);
-            console.log("tax_slab_percentage is: " + tax_slab_percentage);
-
-            document.getElementById("gross_salary_div").innerHTML = annual_gross_salary;
-            document.getElementById("net_tax_slab_div").innerHTML = tax_slab_percentage;
-            document.getElementById("taxable_income_div").innerHTML = taxable_income;
-            document.getElementById("net_payable_tax_div").innerHTML = net_payable_tax;
-
-
+        //first slab
+        if (taxable_income <= 400000) {
+            tax_slab_percentage = '1 %';
+            net_payable_tax = taxable_income * 0.01;
         }
-        else {
-            document.getElementById("gross_salary_div").innerHTML = "-ve or empty values not accepted";
-            document.getElementById("net_tax_slab_div").innerHTML = "-ve or empty values not accepted";
-            document.getElementById("taxable_income_div").innerHTML = "-ve or empty values not accepted";
-            document.getElementById("net_payable_tax_div").innerHTML = "-ve or empty values not accepted";
+        //second slab
+
+        else if (taxable_income > 400000 && taxable_income <= 500000) {
+            tax_slab_percentage = '10 %';
+            net_payable_tax = 0.01 * 400000 + 0.10 * (taxable_income - 400000);
+        }
+        //third slab
+        else if (taxable_income > 500000 && taxable_income <= 700000) {
+            tax_slab_percentage = '20 %';
+            net_payable_tax = 0.01 * 400000 + 0.10 * 100000 + 0.20 * (taxable_income - 500000);
+        }
+        //fourth slab
+        else if (taxable_income > 700000 && taxable_income <= 2000000) {
+            tax_slab_percentage = '30 %';
+            net_payable_tax = 0.01 * 400000 + 0.10 * 100000 + 0.20 * 200000 + 0.30 * (taxable_income - 700000);
+        }
+        //final slab
+        else if (taxable_income > 2000000) {
+            tax_slab_percentage = '36 %';
+            net_payable_tax = 0.01 * 400000 + 0.10 * 100000 + 0.20 * 200000 + 0.30 * 1300000 + 0.36 * (taxable_income - 2000000);
+        } else {
+            tax_slab_percentage = 'all values must be greater than 0 and non empty';
+            net_payable_tax = 0;
         }
 
 
+        console.log("Net payable tax is: " + net_payable_tax);
+        console.log("tax_slab_percentage is: " + tax_slab_percentage);
+
+        document.getElementById("gross_salary_div").innerHTML = annual_gross_salary;
+        document.getElementById("net_tax_slab_div").innerHTML = tax_slab_percentage;
+        document.getElementById("taxable_income_div").innerHTML = taxable_income;
+        document.getElementById("net_payable_tax_div").innerHTML = net_payable_tax;
+
+
+        // }
+        // else {
+        //     document.getElementById("gross_salary_div").innerHTML = "-ve or empty values not accepted";
+        //     document.getElementById("net_tax_slab_div").innerHTML = "-ve or empty values not accepted";
+        //     document.getElementById("taxable_income_div").innerHTML = "-ve or empty values not accepted";
+        //     document.getElementById("net_payable_tax_div").innerHTML = "-ve or empty values not accepted";
+        // }
     }
 
 
